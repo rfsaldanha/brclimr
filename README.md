@@ -8,7 +8,7 @@ To install development version:
 remotes::install_gitlab(repo = "rdefreit/brclimr", host = "https://gitlab.inria.fr")
 ```
 
-Currently, this package uses zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
+Currently, this package uses zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of daily statistics was calculated considering the data cells that intersects the municipality.
 
 For the BR-DWGD project, the following data can be retrieved with this package
 
@@ -45,3 +45,73 @@ brclimr::fetch_data(
     4 2010-10-18 90.10590
     5 2010-10-19 74.33522
     6 2010-10-20 71.50061
+
+### Another example
+
+``` r
+tmax <- brclimr::fetch_data(
+  code_muni = 3303401,
+  product = "brdwgd",
+  indicator = "tmax",
+  statistics = "mean",
+  date_start = as.Date("2010-01-01"),
+  date_end = as.Date("2012-01-01")
+)
+
+tmin <- brclimr::fetch_data(
+  code_muni = 3303401,
+  product = "brdwgd",
+  indicator = "tmin",
+  statistics = "mean",
+  date_start = as.Date("2010-01-01"),
+  date_end = as.Date("2012-01-01")
+)
+
+pr <- brclimr::fetch_data(
+  code_muni = 3303401,
+  product = "brdwgd",
+  indicator = "pr",
+  statistics = "sum",
+  date_start = as.Date("2010-01-01"),
+  date_end = as.Date("2012-01-01")
+)
+
+tmax$name <- "Tmax_avg"
+tmin$name <- "Tmin_avg"
+```
+
+``` r
+library(ggplot2)
+
+ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
+  geom_line() +
+  scale_x_date(date_breaks = "2 months", date_labels =  "%m/%y") +
+  ylim(0, NA) +
+  labs(
+    title = "Nova Friburgo, RJ",
+    x = "Date", 
+    y = "Temperature (average)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+![](images/temp.png)
+
+``` r
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "blue") +
+  scale_x_date(date_breaks = "2 months", date_labels =  "%m/%y") +
+  ylim(0, NA) +
+  labs(
+    title = "Nova Friburgo, RJ",
+    x = "Date", 
+    y = "Precipitation (sum)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+![](images/prec.png)
