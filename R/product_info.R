@@ -12,8 +12,8 @@
 product_info <- function(product = "brdwgd"){
   if(product == "brdwgd"){
     message("Product: brdwgd")
-    for(i in names(brdwgd_data)){
-      message(glue::glue("{brdwgd_data[[i]][['name']]} [{i}] ({brdwgd_data[[i]][['unit']]}) : {glue::glue_collapse(names(brdwgd_data[[i]][['stats']]),  sep = ', ')} [{brdwgd_data[[i]][['date_range']]}]"))
+    for(i in names(brclimr::brdwgd_data)){
+      message(glue::glue("{brclimr::brdwgd_data[[i]][['name']]} [{i}] ({brclimr::brdwgd_data[[i]][['unit']]}) : {glue::glue_collapse(names(brclimr::brdwgd_data[[i]][['stats']]),  sep = ', ')} [{brclimr::brdwgd_data[[i]][['date_range']]}]"))
     }
   }
 }

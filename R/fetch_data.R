@@ -32,11 +32,11 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
     # Check indicator
     checkmate::assert_choice(
       x = indicator,
-      choices = names(brdwgd_data)
+      choices = names(brclimr::brdwgd_data)
     )
 
     # Retrive indicator info and link
-    indi_info <- brdwgd_data[[indicator]]
+    indi_info <- brclimr::brdwgd_data[[indicator]]
     indi_link <- indi_info[["link"]]
 
     # Check statistics
