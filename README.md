@@ -2,9 +2,13 @@
 
 R package to fetch zonal weather indicators for Brazilian municipalities.
 
-Currently, this package shows zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022).
+To install development version:
 
-For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
+``` r
+remotes::install_gitlab(repo = "rdefreit/brclimr", host = "https://gitlab.inria.fr")
+```
+
+Currently, this package uses zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
 
 For the BR-DWGD project, the following data can be retrieved with this package
 
