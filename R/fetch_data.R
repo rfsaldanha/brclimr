@@ -1,9 +1,30 @@
 fetch_data <- function(code_muni, product, indicator, statistics, date_start, date_end){
+  # Argument check
+  checkmate::assert_number(x = code_muni)
+  checkmate::assert_string(x = as.character(code_muni), n.chars = 7)
+  checkmate::assert_choice(x = product, choices = "brdwgd")
+  checkmate::assert_date(date_start)
+  checkmate::assert_date(date_end)
 
-  # Determine link from product list
+  # Argument check and retrieve product info
   if(product == "brdwgd"){
+    # Check indicator
+    checkmate::assert_choice(
+      x = indicator,
+      choices = names(brdwgd_data)
+    )
+
+    # Retrive indicator info and link
     indi_info <- brdwgd_data[[indicator]]
     indi_link <- indi_info[["link"]]
+
+    # Check statistics
+    checkmate::assert_choice(
+      x = statistics,
+      choices = names(indi_info[["stats"]])
+    )
+
+    # Retrive statistics name
     indi_statname <- indi_info[["stats"]][[statistics]]
   }
 
