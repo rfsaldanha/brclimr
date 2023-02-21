@@ -3,8 +3,8 @@ test_that("fetch data from brdwgd works", {
   res <- fetch_data(
     code_muni = 3304557,
     product = "brdwgd",
-    indicator = "u2",
-    statistics = "max",
+    indicator = "rh",
+    statistics = "mean",
     date_start = as.Date("2008-01-01"),
     date_end = as.Date("2008-02-01")
   )
