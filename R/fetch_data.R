@@ -7,7 +7,7 @@
 #' @param date_start A date.
 #' @param date_end A date, >= than `date_start`.
 #'
-#' @return A `data.frame`.
+#' @return A `data.frame` with date and value columns.
 #' @export
 #'
 #' @examples

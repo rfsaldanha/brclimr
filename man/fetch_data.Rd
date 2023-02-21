@@ -20,7 +20,7 @@ fetch_data(code_muni, product, indicator, statistics, date_start, date_end)
 \item{date_end}{A date, >= than \code{date_start}.}
 }
 \value{
-A \code{data.frame}.
+A \code{data.frame} with date and value columns.
 }
 \description{
 Fetch data from given parameters
