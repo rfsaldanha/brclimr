@@ -6,7 +6,7 @@
 \alias{brclimr-package}
 \title{brclimr: Fetch zonal weather zonal indicators for Brazilian municipalities}
 \description{
-Fetch zonal weather zonal indicators for Brazilian municipalities from brclim project.
+This package uses zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality. Other sources with weather indicators are planned to be included, as indicators for different soil coverages.
 }
 \author{
 \strong{Maintainer}: Raphael Saldanha \email{raphael.de-freitas-saldanha@inria.fr} (\href{https://orcid.org/0000-0003-0652-8466}{ORCID})
