@@ -35,7 +35,7 @@ brdwgd_data <- list(
       "max" = "pr_max",
       "mean" = "pr_mean",
       "sd" = "pr_sd",
-      "sum" = "sum_sd"
+      "sum" = "pr_sum"
     )
   ),
   "eto" = list(
