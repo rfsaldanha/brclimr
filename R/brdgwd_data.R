@@ -2,7 +2,7 @@ brdwgd_data <- list(
   "tmax" = list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet",
     "name" = "Maximum temperature",
-    "unit" = "°C",
+    "unit" = "\u00B0C",
     "date_range" = "1963-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmax_min",
@@ -14,7 +14,7 @@ brdwgd_data <- list(
   "tmin" = list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet",
     "name" = "Minimum temperature",
-    "unit" = "°C",
+    "unit" = "\u00B0C",
     "date_range" = "1963-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmin_min",
