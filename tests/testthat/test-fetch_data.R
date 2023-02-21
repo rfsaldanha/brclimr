@@ -5,8 +5,8 @@ test_that("fetch data from brdwgd works", {
     product = "brdwgd",
     indicator = "rh",
     statistics = "mean",
-    date_start = as.Date("2008-01-01"),
-    date_end = as.Date("2008-02-01")
+    date_start = as.Date("2010-10-15"),
+    date_end = as.Date("2010-10-20")
   )
 
   expect_equal(class(res), "data.frame")
