@@ -28,7 +28,7 @@ brclimr::product_info(product = "brdwgd")
 To fetch data for a specific product, indicator and statistic, use the `fetch_data` function. For example, lets consider the Rio de Janeiro, RJ municipality (IBGE code number 3304557), data product "brdwgd", average relative humidity, from 2010-10-15 to 2010-10-20.
 
 ``` r
-fetch_data(
+brclimr::fetch_data(
     code_muni = 3304557,
     product = "brdwgd",
     indicator = "rh",
