@@ -7,6 +7,7 @@ Authors@R:
 Description: This package fetches zonal statistics of weather indicators created for each Brazilian municipality. The dataset of zonal statistics was created using data from the BR-DWGD project as source. For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
     Other sources with weather indicators are planned to be included, as indicators for different soil coverages are also planned.
 License: MIT + file LICENSE
+URL: https://gitlab.inria.fr/rdefreit/brclimr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
@@ -18,6 +19,7 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
+    ggplot2,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
