@@ -1,7 +1,7 @@
 #' Fetch data from given parameters
 #'
 #' @param code_muni IBGE municipality code number with 7 digits.
-#' @param product Zonal indicator procuct. Currently, only `brdwgd`.
+#' @param product Zonal indicator product. Currently, only `brdwgd`.
 #' @param indicator Indicator name from the product. Check the available indicators with the \link{product_info} function.
 #' @param statistics Statistics name from the indicator.
 #' @param date_start A date.
