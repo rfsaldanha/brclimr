@@ -19,11 +19,12 @@ remotes::install_gitlab(repo = "rdefreit/brclimr", host = "https://gitlab.inria.
 
 ## Main functions
 
-Currently, this package uses zonal weather indicators created for each
-Brazilian municipality with data from the BR-DWGD project (Xavier et
-al. 2022). For each municipality and weather indicator, a series of
-daily statistics was calculated considering the data cells that
-intersects the municipality.
+Currently, this package fetches zonal statistics from weather indicators
+created for each Brazilian municipality with data from the BR-DWGD
+project (Xavier et al. 2022). For each municipality and weather
+indicator, a series of daily zonal statistics was calculated considering
+the data cells that intersects the municipality, like mean, max, min, sd
+and sum.
 
 For the BR-DWGD project, the following data can be retrieved with this
 package
