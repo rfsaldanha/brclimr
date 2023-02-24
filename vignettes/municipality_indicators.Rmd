@@ -73,7 +73,7 @@ tmax$name <- "Tmax_avg"
 tmin$name <- "Tmin_avg"
 ```
 
-```{r fig.width=6}
+```{r}
 library(ggplot2)
 
 ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
@@ -90,7 +90,7 @@ ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-```{r fig.width=6}
+```{r}
 ggplot(data = pr, aes(x = date, y = value)) +
   geom_line(color = "blue") +
   scale_x_date(date_breaks = "2 months", date_labels =  "%m/%y") +
