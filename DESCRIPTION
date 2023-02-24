@@ -1,11 +1,11 @@
 Package: brclimr
-Title: Fetch zonal weather zonal indicators for Brazilian municipalities
+Title: Fetch zonal statistics of weather indicators for Brazilian municipalities
 Version: 0.0.1
 Authors@R: 
     person("Raphael", "Saldanha", , "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0652-8466"))
-Description: This package uses zonal weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
-    Other sources with weather indicators are planned to be included, as indicators for different soil coverages.
+Description: This package fetches zonal statistics of weather indicators created for each Brazilian municipality. The dataset of zonal statistics was created using data from the BR-DWGD project as source. For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
+    Other sources with weather indicators are planned to be included, as indicators for different soil coverages are also planned.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
