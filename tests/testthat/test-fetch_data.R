@@ -1,4 +1,5 @@
 test_that("fetch data from brdwgd works", {
+  skip_on_cran()
 
   res <- fetch_data(
     code_muni = 3304557,
