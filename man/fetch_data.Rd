@@ -26,6 +26,7 @@ A \code{data.frame} with date and value columns.
 Fetch data from given parameters
 }
 \examples{
+\donttest{
 fetch_data(
     code_muni = 3304557,
     product = "brdwgd",
@@ -34,4 +35,5 @@ fetch_data(
     date_start = as.Date("2008-01-01"),
     date_end = as.Date("2008-01-10")
  )
+ }
 }

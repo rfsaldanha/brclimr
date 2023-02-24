@@ -11,6 +11,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' fetch_data(
 #'     code_muni = 3304557,
 #'     product = "brdwgd",
@@ -19,6 +20,7 @@
 #'     date_start = as.Date("2008-01-01"),
 #'     date_end = as.Date("2008-01-10")
 #'  )
+#'  }
 fetch_data <- function(code_muni, product, indicator, statistics, date_start, date_end){
   # Argument check
   checkmate::assert_number(x = code_muni)
