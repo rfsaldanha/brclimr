@@ -49,7 +49,7 @@ municipality (IBGE code number 3304557), data product “brdwgd”, average
 relative humidity, from 2010-10-15 to 2010-10-20.
 
 ``` r
-brclimr::fetch_data(
+fetch_data(
     code_muni = 3304557,
     product = "brdwgd",
     indicator = "rh",
@@ -69,7 +69,7 @@ brclimr::fetch_data(
 ## Another example
 
 ``` r
-tmax <- brclimr::fetch_data(
+tmax <- fetch_data(
   code_muni = 3303401,
   product = "brdwgd",
   indicator = "tmax",
@@ -78,7 +78,7 @@ tmax <- brclimr::fetch_data(
   date_end = as.Date("2012-01-01")
 )
 
-tmin <- brclimr::fetch_data(
+tmin <- fetch_data(
   code_muni = 3303401,
   product = "brdwgd",
   indicator = "tmin",
@@ -87,7 +87,7 @@ tmin <- brclimr::fetch_data(
   date_end = as.Date("2012-01-01")
 )
 
-pr <- brclimr::fetch_data(
+pr <- fetch_data(
   code_muni = 3303401,
   product = "brdwgd",
   indicator = "pr",
