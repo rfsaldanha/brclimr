@@ -70,7 +70,7 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
   )
 
   # Disconnect database
-  DBI::dbDisconnect(conn, shutdown=TRUE)
+  DBI::dbDisconnect(conn, shutdown = TRUE)
 
   # Return falues
   return(res)
