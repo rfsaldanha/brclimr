@@ -2,7 +2,7 @@
 #'
 #' The information is printed in the following order: indicator name, indicator acronyms in brackets, unit in parenthesis, available statistics, date range in brackets.
 #'
-#' @param product Zonal indicator procuct. Currently, only `brdwgd`.
+#' @param product Zonal indicator product. Currently, only `brdwgd`.
 #'
 #' @return Printed messages on the console.
 #' @export
