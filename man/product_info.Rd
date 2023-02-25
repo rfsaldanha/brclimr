@@ -7,7 +7,7 @@
 product_info(product = "brdwgd")
 }
 \arguments{
-\item{product}{Zonal indicator procuct. Currently, only \code{brdwgd}.}
+\item{product}{Zonal indicator product. Currently, only \code{brdwgd}.}
 }
 \value{
 Printed messages on the console.
