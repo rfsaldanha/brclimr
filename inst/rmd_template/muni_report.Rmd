@@ -1,0 +1,477 @@
+---
+params:
+  code_muni: code_muni
+  date_start: date_start
+  date_end: date_end
+  temp_max_min_avg: temp_max_min_avg,
+  temp_max_min_sd: temp_max_min_sd,
+  prec_sum: prec_sum,
+  prec_avg: prec_avg,
+  prec_sd: prec_sd,
+  eto_sum: eto_sum,
+  eto_avg: eto_avg,
+  eto_sd: eto_sd,
+  rh_avg: rh_avg,
+  rh_sd: rh_sd,
+  rs_avg: rs_avg,
+  rs_sd: rs_sd,
+  u2_avg: u2_avg,
+  u2_sd: u2_sd,
+  set_title: set_title
+title: "`r params$set_title`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load libraries
+library(rmarkdown)
+library(knitr)
+library(brclimr)
+library(ggplot2)
+
+# Echo default
+opts_chunk$set(
+  fig.width = 14,
+  fig.height = 10,
+  echo = FALSE,
+  results = "asis",
+  warning = TRUE
+)
+
+# Plots evaluation
+temp_max_min_avg <- params$temp_max_min_avg
+temp_max_min_sd <- params$temp_max_min_sd
+prec_sum <- params$prec_sum
+prec_avg <- params$prec_avg
+prec_sd <- params$prec_sd
+eto_sum <- params$eto_sum
+eto_avg <- params$eto_avg
+eto_sd <- params$eto_sd
+rh_avg <- params$rh_avg
+rh_sd <- params$rh_sd
+rs_avg <- params$rs_avg
+rs_sd <- params$rs_sd
+```
+
+```{r temperature_title, eval=any(temp_max_min_avg, temp_max_min_sd)}
+knitr::asis_output("## Temperature\\n")
+```
+
+```{r temperature_avg_title, eval=temp_max_min_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r temperature_avg_plot, eval=temp_max_min_avg}
+tmax <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "tmax",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+tmin <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "tmin",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+tmax$name <- "Tmax_avg"
+tmin$name <- "Tmin_avg"
+
+ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
+  geom_line() +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Temperature (average)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r temperature_sd_title, eval=temp_max_min_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r temperature_sd_plot, eval=temp_max_min_sd}
+tmax <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "tmax",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+tmin <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "tmin",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+tmax$name <- "Tmax_sd"
+tmin$name <- "Tmin_sd"
+
+ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
+  geom_line() +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Temperature (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+
+
+
+```{r precipitation_title, eval=any(prec_sum, prec_avg, prec_sd)}
+knitr::asis_output("## Precipitation\\n")
+```
+
+```{r precipitation_sum_title, eval=prec_sum}
+knitr::asis_output("### Sum\\n")
+```
+
+```{r precipitation_sum_plot, eval=prec_sum}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "pr",
+  statistics = "sum",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "blue") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Precipitation (sum)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r precipitation_avg_title, eval=prec_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r precipitation_avg_plot, eval=prec_avg}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "pr",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "blue") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Precipitation (mean)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r precipitation_sd_title, eval=prec_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r precipitation_sd_plot, eval=prec_sd}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "pr",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "blue") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Precipitation (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+
+
+```{r evapotranspiration_title, eval=any(eto_sum, eto_avg, eto_sd)}
+knitr::asis_output("## Evapotranspiration\\n")
+```
+
+```{r evapotranspiration_sum_title, eval=eto_sum}
+knitr::asis_output("### Sum\\n")
+```
+
+```{r evapotranspiration_sum_plot, eval=eto_sum}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "eto",
+  statistics = "sum",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "orange") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Evapotranspiration (sum)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r evapotranspiration_avg_title, eval=eto_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r evapotranspiration_avg_plot, eval=eto_avg}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "eto",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "orange") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Evapotranspiration (mean)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r evapotranspiration_sd_title, eval=eto_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r evapotranspiration_sd_plot, eval=eto_sd}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "eto",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "orange") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Evapotranspiration (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+
+```{r rh_title, eval=any(rh_avg, rh_sd)}
+knitr::asis_output("## Relative Humidity\\n")
+```
+
+
+```{r rh_avg_title, eval=rh_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r rh_avg_plot, eval=rh_avg}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "rh",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "purple") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Relative humidity (mean)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r rh_sd_title, eval=rh_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r rh_sd_plot, eval=rh_sd}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "rh",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "purple") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Relative humidity (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+
+```{r rs_title, eval=any(rs_avg, rs_sd)}
+knitr::asis_output("## Solar radiation\\n")
+```
+
+
+```{r rs_avg_title, eval=rs_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r rs_avg_plot, eval=rs_avg}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "rs",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "tomato3") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Solar radiation (mean)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r rs_sd_title, eval=rs_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r rs_sd_plot, eval=rs_sd}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "rh",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "tomato3") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Solar radiation (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+
+```{r u2_title, eval=any(u2_avg, u2_sd)}
+knitr::asis_output("## Wind speed\\n")
+```
+
+
+```{r u2_avg_title, eval=u2_avg}
+knitr::asis_output("### Average\\n")
+```
+
+```{r u2_avg_plot, eval=u2_avg}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "u2",
+  statistics = "mean",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "darkslategrey") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Wind speed (mean)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```
+
+```{r u2_sd_title, eval=u2_sd}
+knitr::asis_output("### Standart deviation\\n")
+```
+
+```{r u2_sd_plot, eval=u2_sd}
+pr <- fetch_data(
+  code_muni = params$code_muni,
+  product = "brdwgd",
+  indicator = "u2",
+  statistics = "sd",
+  date_start = params$date_start,
+  date_end = params$date_end
+)
+
+ggplot(data = pr, aes(x = date, y = value)) +
+  geom_line(color = "darkslategrey") +
+  ylim(0, NA) +
+  labs(
+    x = "Date", 
+    y = "Wind speed (sd)",
+    color = ""
+  ) +
+  theme_bw() +
+  theme(legend.position = "bottom", legend.direction = "horizontal")
+```

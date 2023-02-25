@@ -15,7 +15,10 @@ Imports:
     checkmate,
     DBI,
     duckdb,
-    glue
+    ggplot2,
+    glue,
+    knitr,
+    rmarkdown
 Suggests: 
     testthat (>= 3.0.0),
     spelling
