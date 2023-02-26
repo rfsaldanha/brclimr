@@ -1,6 +1,6 @@
 # brclimr 0.0.2
 
-* Remove ggplot2 package suggestion.
+* Add funtion to create reports.
 
 # brclimr 0.0.1
 
