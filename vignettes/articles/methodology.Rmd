@@ -1,7 +1,5 @@
 ---
 title: "Methodology"
-resource_files:
-  - images/zonal_statistics.png
 ---
 
 ```{r, include = FALSE}
@@ -19,7 +17,7 @@ The Brazilian municipality boundaries from 2010 were used as a reference, as pro
 
 Thus, for each municipality, a set of zonal statistics of weather indicators is calculated, at the same time resolution of the source dataset.
 
-![](images/zonal_statistics.png)
+![](zonal_statistics.png)
 
 Those datasets are available as parquet files on S3 buckets and queried by this project functions to retrieve data for a given municipality, dates, weather indicators, and desired zonal statistics.
 
