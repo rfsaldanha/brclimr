@@ -41,7 +41,7 @@ product_info(product = "brdwgd")
 
 ### CHIRPS
 
-> Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak, G., Rowland, J., Harrison, L., Hoell, A.; Michaelsen, J. (2015). The climate hazards infrared precipitation with stations - A new environmental record for monitoring extremes. <i>Scientific Data, 2. https://doi.org/10.1038/sdata.2015.66
+> Funk, C., Peterson, P., Landsfeld, M., Pedreros, D., Verdin, J., Shukla, S., Husak, G., Rowland, J., Harrison, L., Hoell, A.; Michaelsen, J. (2015). The climate hazards infrared precipitation with stations - A new environmental record for monitoring extremes. <i>Scientific Data, 2. <https://doi.org/10.1038/sdata.2015.66>
 
 The CHIRPS dataset presents precipitation data estimated from rain gauges and satellite observation in a grid of 0.05° $\times$ 0.05° of spatial resolution with global coverage, with daily data from 1981 to near-present. Only precipitation (mm) data is available.
 

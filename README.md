@@ -11,8 +11,6 @@ municipalities.
 
 ## Installation
 
-You can install the development version of brclimr like so:
-
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
@@ -24,7 +22,7 @@ created for each Brazilian municipality with data from the BR-DWGD
 project (Xavier et al. 2022). For each municipality and weather
 indicator, a series of daily zonal statistics was calculated considering
 the data cells that intersects the municipality, like mean, max, min, sd
-and sum.
+and sum. More details are available on Articles \> Methodology.
 
 For the BR-DWGD project, the following data can be retrieved with this
 package
@@ -65,6 +63,11 @@ fetch_data(
 #> 5 2010-10-19 74.33522
 #> 6 2010-10-20 71.50061
 ```
+
+If you need to query several municipalities, indicators and zonal
+statistics, we recommend to download and locally query the parquet files
+using the `arrow` package. A list of URLs of the parquet files created
+for this project is available at Articles \> Parquet files.
 
 ## Another example
 

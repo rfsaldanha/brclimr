@@ -1,0 +1,22 @@
+---
+title: "Parquet files"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. 
+
+## BR-DWGD
+
+-    Evapotranspiration: `r brclimr::brdwgd_data[["eto"]][["link"]]`
+-    Precipitation: `r brclimr::brdwgd_data[["pr"]][["link"]]`
+-    Relative Humidity: `r brclimr::brdwgd_data[["rh"]][["link"]]`
+-    Solar radiation: `r brclimr::brdwgd_data[["rs"]][["link"]]`
+-    Maximum temperature: `r brclimr::brdwgd_data[["tmax"]][["link"]]`
+-    Minimum temperature: `r brclimr::brdwgd_data[["tmin"]][["link"]]`
+-    Wind speed: `r brclimr::brdwgd_data[["u2"]][["link"]]`
