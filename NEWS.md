@@ -1,6 +1,6 @@
 # brclimr 0.0.2
 
-* Add funtion to create reports.
+* Add function to create reports.
 
 # brclimr 0.0.1
 
