@@ -1,5 +1,7 @@
 ---
 title: "Methodology"
+resource_files:
+  - images/zonal_statistics.png
 ---
 
 ```{r, include = FALSE}
