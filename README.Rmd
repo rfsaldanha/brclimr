@@ -22,8 +22,6 @@ R package to fetch zonal weather indicators for Brazilian municipalities.
 
 ## Installation
 
-You can install the development version of brclimr like so:
-
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```

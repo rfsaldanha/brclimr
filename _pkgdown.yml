@@ -2,3 +2,7 @@ url: https://rfsaldanha.github.io/brclimr/
 template:
   bootstrap: 5
 
+navbar:
+  structure:
+    right: [github]
+
