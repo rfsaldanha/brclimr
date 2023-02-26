@@ -14,7 +14,7 @@ municipalities.
 You can install the development version of brclimr like so:
 
 ``` r
-remotes::install_gitlab(repo = "rdefreit/brclimr", host = "https://gitlab.inria.fr")
+remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
 
 ## Main functions
