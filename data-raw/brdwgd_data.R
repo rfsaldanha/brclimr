@@ -5,7 +5,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet",
     "name" = "Maximum temperature",
     "unit" = "\u00B0C",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmax_min",
       "max" = "Tmax_max",
@@ -17,7 +17,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet",
     "name" = "Minimum temperature",
     "unit" = "\u00B0C",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmin_min",
       "max" = "Tmin_max",
@@ -29,7 +29,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpr.parquet",
     "name" = "Precipitation",
     "unit" = "mm",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "pr_min",
       "max" = "pr_max",
@@ -42,7 +42,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet",
     "name" = "Evapotranspiration",
     "unit" = "mm",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "ETo_min",
       "max" = "ETo_max",
@@ -55,7 +55,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frh.parquet",
     "name" = "Relative humidity",
     "unit" = "%",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "RH_min",
       "max" = "RH_max",
@@ -67,7 +67,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frs.parquet",
     "name" = "Solar radiation",
     "unit" = "MJ/m2",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Rs_min",
       "max" = "Rs_max",
@@ -79,7 +79,7 @@ brdwgd_data <- list(
     "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fu2.parquet",
     "name" = "Wind speed",
     "unit" = "m/2",
-    "date_range" = "Daily, 1963-01-01 to 2020-07-31",
+    "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "u2_min",
       "max" = "u2_max",
