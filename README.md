@@ -32,13 +32,13 @@ library(brclimr)
 
 product_info(product = "brdwgd")
 #> Product: brdwgd
-#> Maximum temperature [tmax] (°C) : min, max, mean, sd [Daily, 1963-01-01 to 2020-07-31]
-#> Minimum temperature [tmin] (°C) : min, max, mean, sd [Daily, 1963-01-01 to 2020-07-31]
-#> Precipitation [pr] (mm) : min, max, mean, sd, sum [Daily, 1963-01-01 to 2020-07-31]
-#> Evapotranspiration [eto] (mm) : min, max, mean, sd, sum [Daily, 1963-01-01 to 2020-07-31]
-#> Relative humidity [rh] (%) : min, max, mean, sd [Daily, 1963-01-01 to 2020-07-31]
-#> Solar radiation [rs] (MJ/m2) : min, max, mean, sd [Daily, 1963-01-01 to 2020-07-31]
-#> Wind speed [u2] (m/2) : min, max, mean, sd [Daily, 1963-01-01 to 2020-07-31]
+#> Maximum temperature [tmax] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
+#> Minimum temperature [tmin] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
+#> Precipitation [pr] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]
+#> Evapotranspiration [eto] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]
+#> Relative humidity [rh] (%) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
+#> Solar radiation [rs] (MJ/m2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
+#> Wind speed [u2] (m/2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
 ```
 
 To fetch data for a specific product, indicator and statistic, use the

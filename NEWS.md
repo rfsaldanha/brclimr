@@ -1,3 +1,7 @@
+# brclimr 0.1.0
+
+* brdwgd product updated to include data starting form 1961-01-01.
+
 # brclimr 0.0.2
 
 * Add function to create reports.
