@@ -1,19 +1,16 @@
-#' Print product indicators and statistics
+#' Print product information, indicators acronyms and available statistics
 #'
-#' The information is printed in the following order: indicator name, indicator acronyms in brackets, unit in parenthesis, available statistics, date range in brackets.
+#' @param product Zonal indicator product. Options are: `brdwgd`, `terraclimate`.
 #'
-#' @param product Zonal indicator product. Currently, only `brdwgd`.
-#'
-#' @return Printed messages on the console.
+#' @return Printed list tree on the console.
 #' @export
 #'
 #' @examples
 #' product_info()
 product_info <- function(product = "brdwgd"){
   if(product == "brdwgd"){
-    message("Product: brdwgd")
-    for(i in names(brclimr::brdwgd_data)){
-      message(glue::glue("{brclimr::brdwgd_data[[i]][['name']]} [{i}] ({brclimr::brdwgd_data[[i]][['unit']]}) : {glue::glue_collapse(names(brclimr::brdwgd_data[[i]][['stats']]),  sep = ', ')} [{brclimr::brdwgd_data[[i]][['date_range']]}]"))
-    }
+    lobstr::tree(brclimr::brdwgd_data)
+  } else if(product == "terraclimate"){
+    lobstr::tree(brclimr::terraclimate_data)
   }
 }
