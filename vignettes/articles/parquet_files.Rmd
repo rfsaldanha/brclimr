@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 
 If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. 
 
-## BR-DWGD
+## BR-DWGD (13.65 GB)
 
 -    Evapotranspiration: `r brclimr::brdwgd_data[["eto"]][["link"]]`
 -    Precipitation: `r brclimr::brdwgd_data[["pr"]][["link"]]`
@@ -22,7 +22,7 @@ If you need to query several municipalities, indicators and zonal statistics, we
 -    Wind speed: `r brclimr::brdwgd_data[["u2"]][["link"]]`
 
 
-## TerraClimate
+## TerraClimate (1.02 GB)
 -    Actual Evapotranspiration: `r brclimr::terraclimate_data[["aet"]][["link"]]`
 -    Climate Water Deficit: `r brclimr::terraclimate_data[["def"]][["link"]]`
 -    Potential evapotranspiration: `r brclimr::terraclimate_data[["pet"]][["link"]]`
@@ -37,3 +37,22 @@ If you need to query several municipalities, indicators and zonal statistics, we
 -    Wind speed: `r brclimr::terraclimate_data[["ws"]][["link"]]`
 -    Vapor Pressure Deficit: `r brclimr::terraclimate_data[["vpd"]][["link"]]`
 -    PDSI: `r brclimr::terraclimate_data[["pdsi"]][["link"]]`
+
+## Query example
+
+After downloading the parquets files, you can query them using the `arrow` package.
+
+```{r eval=FALSE}
+library(tidyverse)
+library(arrow)
+
+brdwgd <- open_dataset(sources = "/parquet/files/address/")
+
+brdwgd %>%
+  filter(code_muni %in% c(3105608, 3304557, 3136702)) %>%
+  filter(name == "Tmax_mean") %>%
+  filter(date >= as.Date("2008-01-01") & date <= as.Date("2008-12-31")) %>%
+  select(code_muni, date, value) %>%
+  collect()
+```
+

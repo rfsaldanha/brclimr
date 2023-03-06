@@ -85,7 +85,7 @@
 statistics, we recommend to download and locally query the parquet files
 using the <code>arrow</code> package.</p>
 <div class="section level2">
-<h2 id="br-dwgd">BR-DWGD<a class="anchor" aria-label="anchor" href="#br-dwgd"></a>
+<h2 id="br-dwgd-13-65-gb">BR-DWGD (13.65 GB)<a class="anchor" aria-label="anchor" href="#br-dwgd-13-65-gb"></a>
 </h2>
 <ul>
 <li>Evapotranspiration: <a href="https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet" class="external-link uri">https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet</a>
@@ -105,7 +105,7 @@ using the <code>arrow</code> package.</p>
 </ul>
 </div>
 <div class="section level2">
-<h2 id="terraclimate">TerraClimate<a class="anchor" aria-label="anchor" href="#terraclimate"></a>
+<h2 id="terraclimate-1-02-gb">TerraClimate (1.02 GB)<a class="anchor" aria-label="anchor" href="#terraclimate-1-02-gb"></a>
 </h2>
 <ul>
 <li>Actual Evapotranspiration: <a href="https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Faet.parquet" class="external-link uri">https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Faet.parquet</a>
@@ -137,6 +137,24 @@ using the <code>arrow</code> package.</p>
 <li>PDSI: <a href="https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet" class="external-link uri">https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet</a>
 </li>
 </ul>
+</div>
+<div class="section level2">
+<h2 id="query-example">Query example<a class="anchor" aria-label="anchor" href="#query-example"></a>
+</h2>
+<p>After downloading the parquets files, you can query them using the
+<code>arrow</code> package.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/apache/arrow/" class="external-link">arrow</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">brdwgd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://arrow.apache.org/docs/r/reference/open_dataset.html" class="external-link">open_dataset</a></span><span class="op">(</span>sources <span class="op">=</span> <span class="st">"/parquet/files/address/"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">brdwgd</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">code_muni</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3105608</span>, <span class="fl">3304557</span>, <span class="fl">3136702</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"Tmax_mean"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-01-01"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">date</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-12-31"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">code_muni</span>, <span class="va">date</span>, <span class="va">value</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/compute.html" class="external-link">collect</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
