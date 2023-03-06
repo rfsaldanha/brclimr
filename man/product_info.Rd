@@ -4,7 +4,7 @@
 \alias{product_info}
 \title{Print product information, indicators acronyms and available statistics}
 \usage{
-product_info(product = "brdwgd")
+product_info(product)
 }
 \arguments{
 \item{product}{Zonal indicator product. Options are: \code{brdwgd}, \code{terraclimate}.}
@@ -16,5 +16,5 @@ Printed list tree on the console.
 Print product information, indicators acronyms and available statistics
 }
 \examples{
-product_info()
+product_info("terraclimate")
 }

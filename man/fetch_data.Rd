@@ -26,7 +26,7 @@ A \code{data.frame} with date and value columns.
 Fetch zonal statistics from a product for given municipality code and dates.
 }
 \details{
-For products with monthly data, like \code{terraclimate}, only the month of the dates in considered. By example, using \code{as.Date("2008-01-01")} or \code{as.Date("2008-01-15")} as arguments for \code{date_start} will retrieve the same data: the zonal statistics for January, 2008.
+For products with monthly data, like \code{terraclimate}, inform the start and end dates with the fist day of the month. Example: \code{as.Date("2008-06-01")} for June, 2008.
 }
 \examples{
 \donttest{

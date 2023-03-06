@@ -6,8 +6,11 @@
 #' @export
 #'
 #' @examples
-#' product_info()
-product_info <- function(product = "brdwgd"){
+#' product_info("terraclimate")
+product_info <- function(product){
+  # Argument check
+  checkmate::assert_choice(x = product, choices = c("brdwgd", "terraclimate"))
+
   if(product == "brdwgd"){
     lobstr::tree(brclimr::brdwgd_data)
   } else if(product == "terraclimate"){

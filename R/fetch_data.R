@@ -11,7 +11,7 @@
 #'
 #'
 #' @details
-#' For products with monthly data, like `terraclimate`, only the month of the dates in considered. By example, using `as.Date("2008-01-01")` or `as.Date("2008-01-15")` as arguments for `date_start` will retrieve the same data: the zonal statistics for January, 2008.
+#' For products with monthly data, like `terraclimate`, inform the start and end dates with the fist day of the month. Example: `as.Date("2008-06-01")` for June, 2008.
 #'
 #' @return A `data.frame` with date and value columns.
 #' @export
@@ -43,7 +43,7 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
       choices = names(brclimr::brdwgd_data)
     )
 
-    # Retrive indicator info
+    # Retrieve indicator info
     indi_info <- brclimr::brdwgd_data[[indicator]]
   } else if(product == "terraclimate"){
     # Check indicator

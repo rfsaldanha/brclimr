@@ -21,7 +21,7 @@ test_that("fetch data from terraclimate works", {
     product = "terraclimate",
     indicator = "tmax",
     statistics = "mean",
-    date_start = as.Date("2010-01-01"),
+    date_start = as.Date("2010-01-15"),
     date_end = as.Date("2010-03-01")
   )
 

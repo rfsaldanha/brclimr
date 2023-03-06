@@ -58,7 +58,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">product_info</span><span class="op">(</span>product <span class="op">=</span> <span class="st">"brdwgd"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">product_info</span><span class="op">(</span><span class="va">product</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -76,80 +76,169 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">product_info</span><span class="op">(</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">product_info</span><span class="op">(</span><span class="st">"terraclimate"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">&lt;list&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├─tmax: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Maximum temperature"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"°C"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"Tmax_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"Tmax_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"Tmax_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"Tmax_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"tmax_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"tmax_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"tmax_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"tmax_sd"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ├─tmin: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Minimum temperature"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"°C"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"Tmin_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"Tmin_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"Tmin_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"Tmin_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├─pr: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"tmin_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"tmin_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"tmin_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"tmin_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─ppt: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Precipitation"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"pr_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"pr_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"pr_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"pr_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"pr_sum"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├─eto: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Evapotranspiration"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"ppt_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"ppt_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"ppt_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"ppt_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"ppt_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─aet: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Actual Evapotranspiration"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"ETo_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"ETo_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"ETo_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"ETo_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"ETo_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├─rh: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Relative humidity"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"%"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"aet_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"aet_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"aet_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"aet_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"aet_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─def: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Climate Water Deficit"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"RH_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"RH_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"RH_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"RH_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ├─rs: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Solar radiation"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"MJ/m2"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"def_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"def_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"def_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"def_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"def_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─pdsi: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Palmer Drought Severity Index"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"unitless"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"Rs_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"Rs_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"Rs_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"Rs_sd"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> └─u2: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"PDSI_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"PDSI_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"PDSI_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"PDSI_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─pet: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Potential evapotranspiration"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"pet_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"pet_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"pet_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"pet_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"pet_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─q: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Runoff"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"q_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"q_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"q_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"q_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"q_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─soil: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Soil Moisture"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Total column, at end of month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"soil_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"soil_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"soil_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"soil_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"soil_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─srad: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Downward surface shortwave radia..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"W/m2"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"srad_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"srad_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"srad_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"srad_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"srad_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─swe: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Snow water equivalent"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"mm"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"swe_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"swe_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"swe_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─sd: <span style="color: #0000BB;">"swe_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sum: <span style="color: #0000BB;">"swe_sum"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─vap: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Vapor pressure"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"vap_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"vap_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"vap_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"vap_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ├─vpd: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─name: <span style="color: #0000BB;">"Vapor Pressure Deficit"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─min: <span style="color: #0000BB;">"vpd_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─max: <span style="color: #0000BB;">"vpd_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   ├─mean: <span style="color: #0000BB;">"vpd_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> │   └─sd: <span style="color: #0000BB;">"vpd_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> └─ws: <span style="color: #555555;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ├─name: <span style="color: #0000BB;">"Wind speed"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─unit: <span style="color: #0000BB;">"m/2"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─detail: <span style="color: #0000BB;">"Average for month"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─unit: <span style="color: #0000BB;">"m/s"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   └─stats: <span style="color: #555555;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─min: <span style="color: #0000BB;">"u2_min"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─max: <span style="color: #0000BB;">"u2_max"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─mean: <span style="color: #0000BB;">"u2_mean"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     └─sd: <span style="color: #0000BB;">"u2_sd"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─min: <span style="color: #0000BB;">"ws_min"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─max: <span style="color: #0000BB;">"ws_max"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ├─mean: <span style="color: #0000BB;">"ws_mean"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     └─sd: <span style="color: #0000BB;">"ws_sd"</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
