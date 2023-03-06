@@ -3,7 +3,7 @@
 \docType{data}
 \name{brdwgd_data}
 \alias{brdwgd_data}
-\title{BR-DWGD zonal indicators data}
+\title{BR-DWGD zonal statistics data}
 \format{
 An object of class \code{list} of length 7.
 }

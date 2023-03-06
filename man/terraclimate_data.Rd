@@ -3,7 +3,7 @@
 \docType{data}
 \name{terraclimate_data}
 \alias{terraclimate_data}
-\title{TerraClimate zonal indicators data}
+\title{TerraClimate zonal statistics data}
 \format{
 An object of class \code{list} of length 14.
 }

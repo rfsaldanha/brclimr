@@ -1,4 +1,4 @@
-#' TerraClimate zonal indicators data
+#' TerraClimate zonal statistics data
 #'
 #' A list with TerraClimate zonal indicators data.
 #'
