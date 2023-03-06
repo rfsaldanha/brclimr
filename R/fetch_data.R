@@ -1,11 +1,17 @@
-#' Fetch data from given parameters
+#' Fetch zonal statistics
 #'
-#' @param code_muni IBGE municipality code number with 7 digits.
-#' @param product Zonal indicator product. Options are: `brdwgd`, `terraclimate`.
-#' @param indicator Indicator name from the product. Check the available indicators with the \link{product_info} function.
-#' @param statistics Statistics name from the indicator. Check the available statistics with the \link{product_info} function.
-#' @param date_start A date.
-#' @param date_end A date, >= than `date_start`.
+#' Fetch zonal statistics from a product for given municipality code and dates.
+#'
+#' @param code_muni numeric. IBGE municipality code number with 7 digits.
+#' @param product string. Zonal indicator product. Options are: `brdwgd`, `terraclimate`.
+#' @param indicator string. Indicator name from the product. Check the available indicators with the \link{product_info} function.
+#' @param statistics string. Statistics name from the indicator. Check the available statistics with the \link{product_info} function.
+#' @param date_start date, included in the selection.
+#' @param date_end date, included in the selection, must be equal or greather than `date_start`.
+#'
+#'
+#' @details
+#' For products with monthly data, like `terraclimate`, only the month of the dates in considered. By example, using `as.Date("2008-01-01")` or `as.Date("2008-01-15")` as arguments for `date_start` will retrieve the same data: the zonal statistics for January, 2008.
 #'
 #' @return A `data.frame` with date and value columns.
 #' @export

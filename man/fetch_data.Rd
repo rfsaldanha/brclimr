@@ -2,28 +2,31 @@
 % Please edit documentation in R/fetch_data.R
 \name{fetch_data}
 \alias{fetch_data}
-\title{Fetch data from given parameters}
+\title{Fetch zonal statistics}
 \usage{
 fetch_data(code_muni, product, indicator, statistics, date_start, date_end)
 }
 \arguments{
-\item{code_muni}{IBGE municipality code number with 7 digits.}
+\item{code_muni}{numeric. IBGE municipality code number with 7 digits.}
 
-\item{product}{Zonal indicator product. Options are: \code{brdwgd}, \code{terraclimate}.}
+\item{product}{string. Zonal indicator product. Options are: \code{brdwgd}, \code{terraclimate}.}
 
-\item{indicator}{Indicator name from the product. Check the available indicators with the \link{product_info} function.}
+\item{indicator}{string. Indicator name from the product. Check the available indicators with the \link{product_info} function.}
 
-\item{statistics}{Statistics name from the indicator. Check the available statistics with the \link{product_info} function.}
+\item{statistics}{string. Statistics name from the indicator. Check the available statistics with the \link{product_info} function.}
 
-\item{date_start}{A date.}
+\item{date_start}{date, included in the selection.}
 
-\item{date_end}{A date, >= than \code{date_start}.}
+\item{date_end}{date, included in the selection, must be equal or greather than \code{date_start}.}
 }
 \value{
 A \code{data.frame} with date and value columns.
 }
 \description{
-Fetch data from given parameters
+Fetch zonal statistics from a product for given municipality code and dates.
+}
+\details{
+For products with monthly data, like \code{terraclimate}, only the month of the dates in considered. By example, using \code{as.Date("2008-01-01")} or \code{as.Date("2008-01-15")} as arguments for \code{date_start} will retrieve the same data: the zonal statistics for January, 2008.
 }
 \examples{
 \donttest{
