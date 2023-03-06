@@ -7,7 +7,7 @@
 #' @param indicator string. Indicator name from the product. Check the available indicators with the \link{product_info} function.
 #' @param statistics string. Statistics name from the indicator. Check the available statistics with the \link{product_info} function.
 #' @param date_start date, included in the selection.
-#' @param date_end date, included in the selection, must be equal or greather than `date_start`.
+#' @param date_end date, included in the selection, must be equal or greater than `date_start`.
 #'
 #'
 #' @details
