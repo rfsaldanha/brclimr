@@ -1,6 +1,7 @@
 # brclimr 0.1.0
 
 * brdwgd product updated to include data starting form 1961-01-01.
+* terraclimate product included.
 
 # brclimr 0.0.2
 

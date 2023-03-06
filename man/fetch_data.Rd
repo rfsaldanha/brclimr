@@ -9,11 +9,11 @@ fetch_data(code_muni, product, indicator, statistics, date_start, date_end)
 \arguments{
 \item{code_muni}{IBGE municipality code number with 7 digits.}
 
-\item{product}{Zonal indicator product. Currently, only \code{brdwgd}.}
+\item{product}{Zonal indicator product. Options are: \code{brdwgd}, \code{terraclimate}.}
 
 \item{indicator}{Indicator name from the product. Check the available indicators with the \link{product_info} function.}
 
-\item{statistics}{Statistics name from the indicator.}
+\item{statistics}{Statistics name from the indicator. Check the available statistics with the \link{product_info} function.}
 
 \item{date_start}{A date.}
 

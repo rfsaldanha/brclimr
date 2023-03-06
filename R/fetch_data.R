@@ -1,9 +1,9 @@
 #' Fetch data from given parameters
 #'
 #' @param code_muni IBGE municipality code number with 7 digits.
-#' @param product Zonal indicator product. Currently, only `brdwgd`.
+#' @param product Zonal indicator product. Options are: `brdwgd`, `terraclimate`.
 #' @param indicator Indicator name from the product. Check the available indicators with the \link{product_info} function.
-#' @param statistics Statistics name from the indicator.
+#' @param statistics Statistics name from the indicator. Check the available statistics with the \link{product_info} function.
 #' @param date_start A date.
 #' @param date_end A date, >= than `date_start`.
 #'
@@ -25,7 +25,7 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
   # Argument check
   checkmate::assert_number(x = code_muni)
   checkmate::assert_string(x = as.character(code_muni), n.chars = 7)
-  checkmate::assert_choice(x = product, choices = "brdwgd")
+  checkmate::assert_choice(x = product, choices = c("brdwgd", "terraclimate"))
   checkmate::assert_date(date_start)
   checkmate::assert_date(date_end, lower = date_start)
 
@@ -37,19 +37,31 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
       choices = names(brclimr::brdwgd_data)
     )
 
-    # Retrive indicator info and link
+    # Retrive indicator info
     indi_info <- brclimr::brdwgd_data[[indicator]]
-    indi_link <- indi_info[["link"]]
-
-    # Check statistics
+  } else if(product == "terraclimate"){
+    # Check indicator
     checkmate::assert_choice(
-      x = statistics,
-      choices = names(indi_info[["stats"]])
+      x = indicator,
+      choices = names(brclimr::terraclimate_data)
     )
 
-    # Retrive statistics name
-    indi_statname <- indi_info[["stats"]][[statistics]]
+    # Retrive indicator info
+    indi_info <- brclimr::terraclimate_data[[indicator]]
   }
+
+  # Retrive indicator link
+  indi_link <- indi_info[["link"]]
+
+  # Check statistics
+  checkmate::assert_choice(
+    x = statistics,
+    choices = names(indi_info[["stats"]])
+  )
+
+  # Retrive statistics name
+  indi_statname <- indi_info[["stats"]][[statistics]]
+
 
   # Create duckdb connection
   conn <- DBI::dbConnect(duckdb::duckdb())
