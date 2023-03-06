@@ -100,11 +100,8 @@ queried by this project functions to retrieve data for a given
 municipality, dates, weather indicators, and desired zonal
 statistics.</p>
 <div class="section level2">
-<h2 id="source-datasets">Source datasets<a class="anchor" aria-label="anchor" href="#source-datasets"></a>
+<h2 id="br-dwgd">BR-DWGD<a class="anchor" aria-label="anchor" href="#br-dwgd"></a>
 </h2>
-<div class="section level3">
-<h3 id="br-dwgd">BR-DWGD<a class="anchor" aria-label="anchor" href="#br-dwgd"></a>
-</h3>
 <blockquote>
 <p>Xavier, A. C., Scanlon, B. R., King, C. W., &amp; Alves, A. I.
 (2022). New improved Brazilian daily weather gridded data (1961–2020).
@@ -118,29 +115,89 @@ stations and 11,473 rain gauges in its interpolation methods,
 cross-validated to the selection of the best method for each weather
 indicator.</p>
 <p>The following weather indicators are available from the BR-DWGD
-study: precipitation (mm), minimum temperature (°C) maximum temperature
+study: precipitation (mm), minimum temperature (°C), maximum temperature
 (°C), solar radiation (<span class="math inline">\(MJ\cdot
 m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^{-1}\)</span>) and relative humidity
 (%).</p>
-<p>The function <code>product_info</code> present the available weather
-indicators, acronyms, units, zonal statistics, time unit, and coverage
-available.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rfsaldanha.github.io/brclimr/">brclimr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/product_info.html">product_info</a></span><span class="op">(</span>product <span class="op">=</span> <span class="st">"brdwgd"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Product: brdwgd</span></span>
-<span><span class="co">#&gt; Maximum temperature [tmax] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Minimum temperature [tmin] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Precipitation [pr] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Evapotranspiration [eto] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Relative humidity [rh] (%) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Solar radiation [rs] (MJ/m2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]</span></span>
-<span><span class="co">#&gt; Wind speed [u2] (m/2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">brclimr</span><span class="fu">::</span><span class="fu"><a href="../reference/product_info.html">product_info</a></span><span class="op">(</span>product <span class="op">=</span> <span class="st">"brdwgd"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; ├─tmax: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Maximum temperature"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"Tmax_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"Tmax_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Tmax_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Tmax_sd"</span></span></span>
+<span><span class="co">#&gt; ├─tmin: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Minimum temperature"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"Tmin_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"Tmin_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Tmin_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Tmin_sd"</span></span></span>
+<span><span class="co">#&gt; ├─pr: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Precipitation"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"pr_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"pr_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"pr_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"pr_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"pr_sum"</span></span></span>
+<span><span class="co">#&gt; ├─eto: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Evapotranspiration"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"ETo_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"ETo_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"ETo_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"ETo_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"ETo_sd"</span></span></span>
+<span><span class="co">#&gt; ├─rh: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Relative humidity"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"%"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"RH_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"RH_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"RH_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"RH_sd"</span></span></span>
+<span><span class="co">#&gt; ├─rs: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Solar radiation"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"MJ/m2"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"Rs_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"Rs_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Rs_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Rs_sd"</span></span></span>
+<span><span class="co">#&gt; └─u2: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;   ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
+<span><span class="co">#&gt;   ├─name: <span style="color: #0000BB;">"Wind speed"</span></span></span>
+<span><span class="co">#&gt;   ├─unit: <span style="color: #0000BB;">"m/2"</span></span></span>
+<span><span class="co">#&gt;   ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
+<span><span class="co">#&gt;   └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;     ├─min: <span style="color: #0000BB;">"u2_min"</span></span></span>
+<span><span class="co">#&gt;     ├─max: <span style="color: #0000BB;">"u2_max"</span></span></span>
+<span><span class="co">#&gt;     ├─mean: <span style="color: #0000BB;">"u2_mean"</span></span></span>
+<span><span class="co">#&gt;     └─sd: <span style="color: #0000BB;">"u2_sd"</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="terraclimate">TerraClimate<a class="anchor" aria-label="anchor" href="#terraclimate"></a>
-</h3>
+<div class="section level2">
+<h2 id="terraclimate">TerraClimate<a class="anchor" aria-label="anchor" href="#terraclimate"></a>
+</h2>
 <blockquote>
 Abatzoglou, J. T., Dobrowski, S. Z., Parks, S. A., Hegewisch, K. C.
 (2018). TerraClimate, a high-resolution global dataset of monthly
@@ -149,9 +206,181 @@ climate and climatic water balance from 1958-2015. Scientific Data, 5.
 </blockquote>
 </div>
 
-<p>The monthly data from TerraClimate is being processed and will be
-included soon in this package.</p>
-</div>
+<p>The TerraClimate dataset presents monthly meteorological data
+interpolated to a grid with 0.04° <span class="math inline">\(\times\)</span> 0.04° (1/24th degree) of spatial
+resolution with world cover, with monthly data from January, 1958, to
+December, 2021.</p>
+<p>The following weather indicators are available from the TerraClimate
+study: Actual Evapotranspiration (mm), Climate Water Deficit (mm),
+Potential evapotranspiration(mm), Precipitation (mm), Runoff (mm), Soil
+Moisture (mm), Downward surface shortwave radiation (<span class="math inline">\(W/m^2\)</span>), Snow water equivalent (mm),
+Minimum temperature (°C), Maximum temperature (°C), Vapor pressure
+(kPa), Wind speed (<span class="math inline">\(m/s\)</span>), Vapor
+Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">brclimr</span><span class="fu">::</span><span class="fu"><a href="../reference/product_info.html">product_info</a></span><span class="op">(</span>product <span class="op">=</span> <span class="st">"terraclimate"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; ├─tmax: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Maximum temperature"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"tmax_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"tmax_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"tmax_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"tmax_sd"</span></span></span>
+<span><span class="co">#&gt; ├─tmin: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Minimum temperature"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"tmin_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"tmin_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"tmin_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"tmin_sd"</span></span></span>
+<span><span class="co">#&gt; ├─ppt: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Precipitation"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"ppt_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"ppt_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"ppt_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"ppt_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"ppt_sum"</span></span></span>
+<span><span class="co">#&gt; ├─aet: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Actual Evapotranspiration"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"aet_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"aet_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"aet_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"aet_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"aet_sum"</span></span></span>
+<span><span class="co">#&gt; ├─def: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Climate Water Deficit"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"def_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"def_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"def_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"def_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"def_sum"</span></span></span>
+<span><span class="co">#&gt; ├─pdsi: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Palmer Drought Severity Index"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"unitless"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"PDSI_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"PDSI_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"PDSI_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"PDSI_sd"</span></span></span>
+<span><span class="co">#&gt; ├─pet: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Potential evapotranspiration"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"pet_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"pet_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"pet_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"pet_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"pet_sum"</span></span></span>
+<span><span class="co">#&gt; ├─q: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Runoff"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"q_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"q_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"q_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"q_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"q_sum"</span></span></span>
+<span><span class="co">#&gt; ├─soil: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Soil Moisture"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Total column, at end of month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"soil_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"soil_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"soil_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"soil_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"soil_sum"</span></span></span>
+<span><span class="co">#&gt; ├─srad: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Downward surface shortwave radia..."</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"W/m2"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"srad_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"srad_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"srad_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"srad_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"srad_sum"</span></span></span>
+<span><span class="co">#&gt; ├─swe: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Snow water equivalent"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"swe_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"swe_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"swe_mean"</span></span></span>
+<span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"swe_sd"</span></span></span>
+<span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"swe_sum"</span></span></span>
+<span><span class="co">#&gt; ├─vap: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Vapor pressure"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"vap_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"vap_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"vap_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"vap_sd"</span></span></span>
+<span><span class="co">#&gt; ├─vpd: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Vapor Pressure Deficit"</span></span></span>
+<span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span></span>
+<span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"vpd_min"</span></span></span>
+<span><span class="co">#&gt; │   ├─max: <span style="color: #0000BB;">"vpd_max"</span></span></span>
+<span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"vpd_mean"</span></span></span>
+<span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"vpd_sd"</span></span></span>
+<span><span class="co">#&gt; └─ws: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;   ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
+<span><span class="co">#&gt;   ├─name: <span style="color: #0000BB;">"Wind speed"</span></span></span>
+<span><span class="co">#&gt;   ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
+<span><span class="co">#&gt;   ├─unit: <span style="color: #0000BB;">"m/s"</span></span></span>
+<span><span class="co">#&gt;   ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
+<span><span class="co">#&gt;   └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;     ├─min: <span style="color: #0000BB;">"ws_min"</span></span></span>
+<span><span class="co">#&gt;     ├─max: <span style="color: #0000BB;">"ws_max"</span></span></span>
+<span><span class="co">#&gt;     ├─mean: <span style="color: #0000BB;">"ws_mean"</span></span></span>
+<span><span class="co">#&gt;     └─sd: <span style="color: #0000BB;">"ws_sd"</span></span></span></code></pre></div>
 </main>
 </div>
   <aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

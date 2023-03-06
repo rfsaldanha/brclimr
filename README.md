@@ -9,36 +9,103 @@
 R package to fetch zonal weather indicators for Brazilian
 municipalities.
 
+This package fetches zonal statistics from weather indicators created
+for each Brazilian municipality with data from the BR-DWGD and
+TerraClimate projects. For each municipality and weather indicator,
+zonal statistics were calculated considering the data cells that
+intersects the municipality, like mean, max, min, sd and sum.
+
+Details about the used methodology to calculate the zonal statistics are
+available at *Articles \> Methodology*.
+
 ## Installation
 
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
 
-## Main functions
+## Example
 
-Currently, this package fetches zonal statistics from weather indicators
-created for each Brazilian municipality with data from the BR-DWGD
-project (Xavier et al. 2022). For each municipality and weather
-indicator, a series of daily zonal statistics was calculated considering
-the data cells that intersects the municipality, like mean, max, min, sd
-and sum. More details are available on Articles \> Methodology.
-
-For the BR-DWGD project, the following data can be retrieved with this
-package
+For the BR-DWGD project, the following indicators and zonal statistics
+can be retrieved.
 
 ``` r
 library(brclimr)
 
 product_info(product = "brdwgd")
-#> Product: brdwgd
-#> Maximum temperature [tmax] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
-#> Minimum temperature [tmin] (°C) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
-#> Precipitation [pr] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]
-#> Evapotranspiration [eto] (mm) : min, max, mean, sd, sum [Daily, 1961-01-01 to 2020-07-31]
-#> Relative humidity [rh] (%) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
-#> Solar radiation [rs] (MJ/m2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
-#> Wind speed [u2] (m/2) : min, max, mean, sd [Daily, 1961-01-01 to 2020-07-31]
+#> <list>
+#> ├─tmax: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Maximum temperature"
+#> │ ├─unit: "°C"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "Tmax_min"
+#> │   ├─max: "Tmax_max"
+#> │   ├─mean: "Tmax_mean"
+#> │   └─sd: "Tmax_sd"
+#> ├─tmin: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Minimum temperature"
+#> │ ├─unit: "°C"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "Tmin_min"
+#> │   ├─max: "Tmin_max"
+#> │   ├─mean: "Tmin_mean"
+#> │   └─sd: "Tmin_sd"
+#> ├─pr: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Precipitation"
+#> │ ├─unit: "mm"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "pr_min"
+#> │   ├─max: "pr_max"
+#> │   ├─mean: "pr_mean"
+#> │   ├─sd: "pr_sd"
+#> │   └─sum: "pr_sum"
+#> ├─eto: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Evapotranspiration"
+#> │ ├─unit: "mm"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "ETo_min"
+#> │   ├─max: "ETo_max"
+#> │   ├─mean: "ETo_mean"
+#> │   ├─sd: "ETo_sd"
+#> │   └─sum: "ETo_sd"
+#> ├─rh: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Relative humidity"
+#> │ ├─unit: "%"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "RH_min"
+#> │   ├─max: "RH_max"
+#> │   ├─mean: "RH_mean"
+#> │   └─sd: "RH_sd"
+#> ├─rs: <list>
+#> │ ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#> │ ├─name: "Solar radiation"
+#> │ ├─unit: "MJ/m2"
+#> │ ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#> │ └─stats: <list>
+#> │   ├─min: "Rs_min"
+#> │   ├─max: "Rs_max"
+#> │   ├─mean: "Rs_mean"
+#> │   └─sd: "Rs_sd"
+#> └─u2: <list>
+#>   ├─link: "https://brdwgd.nyc3.cdn.digitalo..."
+#>   ├─name: "Wind speed"
+#>   ├─unit: "m/2"
+#>   ├─date_range: "Daily, 1961-01-01 to 2020-07-31"
+#>   └─stats: <list>
+#>     ├─min: "u2_min"
+#>     ├─max: "u2_max"
+#>     ├─mean: "u2_mean"
+#>     └─sd: "u2_sd"
 ```
 
 To fetch data for a specific product, indicator and statistic, use the
@@ -67,7 +134,7 @@ fetch_data(
 If you need to query several municipalities, indicators and zonal
 statistics, we recommend to download and locally query the parquet files
 using the `arrow` package. A list of URLs of the parquet files created
-for this project is available at Articles \> Parquet files.
+for this project is available at *Articles \> Parquet files*.
 
 ## Another example
 

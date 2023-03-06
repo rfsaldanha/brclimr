@@ -17,7 +17,7 @@ fetch_data(code_muni, product, indicator, statistics, date_start, date_end)
 
 \item{date_start}{date, included in the selection.}
 
-\item{date_end}{date, included in the selection, must be equal or greather than \code{date_start}.}
+\item{date_end}{date, included in the selection, must be equal or greater than \code{date_start}.}
 }
 \value{
 A \code{data.frame} with date and value columns.

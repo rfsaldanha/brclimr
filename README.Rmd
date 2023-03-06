@@ -20,17 +20,19 @@ knitr::opts_chunk$set(
 
 R package to fetch zonal weather indicators for Brazilian municipalities.
 
+This package fetches zonal statistics from weather indicators created for each Brazilian municipality with data from the BR-DWGD and TerraClimate projects. For each municipality and weather indicator, zonal statistics were calculated considering the data cells that intersects the municipality, like mean, max, min, sd and sum. 
+
+Details about the used methodology to calculate the zonal statistics are available at *Articles > Methodology*.
+
 ## Installation
 
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
 
-## Main functions
+## Example
 
-Currently, this package fetches zonal statistics from weather indicators created for each Brazilian municipality with data from the BR-DWGD project (Xavier et al. 2022). For each municipality and weather indicator, a series of daily zonal statistics was calculated considering the data cells that intersects the municipality, like mean, max, min, sd and sum. More details are available on Articles > Methodology.
-
-For the BR-DWGD project, the following data can be retrieved with this package
+For the BR-DWGD project, the following indicators and zonal statistics can be retrieved.
 
 ```{r}
 library(brclimr)
@@ -51,7 +53,7 @@ fetch_data(
   )
 ```
 
-If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. A list of URLs of the parquet files created for this project is available at Articles > Parquet files.
+If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. A list of URLs of the parquet files created for this project is available at *Articles > Parquet files*.
 
 ## Another example
 
