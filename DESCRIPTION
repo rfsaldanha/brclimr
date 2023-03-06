@@ -4,8 +4,7 @@ Version: 0.1.0
 Authors@R: 
     person("Raphael", "Saldanha", , "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0652-8466"))
-Description: Fetches zonal statistics of weather indicators created for each Brazilian municipality. The dataset of zonal statistics was created using data from the 'BR-DWGD' project as source. For each municipality and weather indicator, a series of statistics was calculated considering the data cells that intersects the municipality.
-    Other sources with weather indicators are planned to be included, as indicators for different soil cover and land use are also planned.
+Description: Fetches zonal statistics of weather indicators created for each Brazilian municipality. Datasets of zonal statistics were created using data from the 'BR-DWGD' and 'TerraClimate' projects as sources. For each municipality and weather indicator, zonal statistics were calculated considering the data cells that intersect the municipality. 
 License: MIT + file LICENSE
 URL: https://rfsaldanha.github.io/brclimr/, https://github.com/rfsaldanha/brclimr
 Encoding: UTF-8
