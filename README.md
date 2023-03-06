@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# brclimrx
+# brclimr
 
 <!-- badges: start -->
 <!-- badges: end -->

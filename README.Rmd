@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# brclimrx
+# brclimr
 
 <!-- badges: start -->
 <!-- badges: end -->
