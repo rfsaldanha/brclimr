@@ -18,6 +18,7 @@ Imports:
     ggplot2,
     glue,
     knitr,
+    lobstr,
     rmarkdown
 Suggests: 
     testthat (>= 3.0.0),

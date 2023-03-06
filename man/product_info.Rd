@@ -2,18 +2,18 @@
 % Please edit documentation in R/product_info.R
 \name{product_info}
 \alias{product_info}
-\title{Print product indicators and statistics}
+\title{Print product information, indicators acronyms and available statistics}
 \usage{
 product_info(product = "brdwgd")
 }
 \arguments{
-\item{product}{Zonal indicator product. Currently, only \code{brdwgd}.}
+\item{product}{Zonal indicator product. Options are: \code{brdwgd}, \code{terraclimate}.}
 }
 \value{
-Printed messages on the console.
+Printed list tree on the console.
 }
 \description{
-The information is printed in the following order: indicator name, indicator acronyms in brackets, unit in parenthesis, available statistics, date range in brackets.
+Print product information, indicators acronyms and available statistics
 }
 \examples{
 product_info()
