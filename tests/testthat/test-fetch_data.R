@@ -12,3 +12,18 @@ test_that("fetch data from brdwgd works", {
 
   expect_equal(class(res), "data.frame")
 })
+
+test_that("fetch data from terraclimate works", {
+  skip_on_cran()
+
+  res <- fetch_data(
+    code_muni = 3304557,
+    product = "terraclimate",
+    indicator = "tmax",
+    statistics = "mean",
+    date_start = as.Date("2010-01-01"),
+    date_end = as.Date("2010-03-01")
+  )
+
+  expect_equal(class(res), "data.frame")
+})
