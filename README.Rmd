@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 # brclimr
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/brclimr)](https://CRAN.R-project.org/package=brclimr)
+[![](https://cranlogs.r-pkg.org/badges/brclimr)](https://cran.r-project.org/package=brclimr)
 <!-- badges: end -->
 
 This R package retrieves zonal statistics from weather indicators that were calculated for each municipality in Brazil using data from the BR-DWGD and TerraClimate projects.
@@ -26,7 +28,15 @@ Details about the used methodology to calculate the zonal statistics are availab
 
 ## Installation
 
-``` r
+### Stable version
+
+```{r eval=FALSE}
+install.packages("brclimr")
+```
+
+### Development version
+
+```{r eval=FALSE}
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
 

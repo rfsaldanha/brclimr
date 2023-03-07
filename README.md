@@ -4,6 +4,10 @@
 # brclimr
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/brclimr)](https://CRAN.R-project.org/package=brclimr)
+[![](https://cranlogs.r-pkg.org/badges/brclimr)](https://cran.r-project.org/package=brclimr)
 <!-- badges: end -->
 
 This R package retrieves zonal statistics from weather indicators that
@@ -23,6 +27,14 @@ Details about the used methodology to calculate the zonal statistics are
 available at *Articles \> Methodology*.
 
 ## Installation
+
+### Stable version
+
+``` r
+install.packages("brclimr")
+```
+
+### Development version
 
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
@@ -119,7 +131,7 @@ ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ``` r
 ggplot(data = pr, aes(x = date, y = value)) +
@@ -136,4 +148,4 @@ ggplot(data = pr, aes(x = date, y = value)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
