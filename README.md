@@ -8,6 +8,7 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/brclimr)](https://CRAN.R-project.org/package=brclimr)
 [![](https://cranlogs.r-pkg.org/badges/brclimr)](https://cran.r-project.org/package=brclimr)
+[![R-CMD-check](https://github.com/rfsaldanha/brclimr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rfsaldanha/brclimr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This R package retrieves zonal statistics from weather indicators that
