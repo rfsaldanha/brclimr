@@ -7,7 +7,8 @@ Authors@R:
 Description: Fetches zonal statistics from weather indicators that were calculated for each municipality in Brazil using data from the BR-DWGD and TerraClimate projects.
     Zonal statistics such as mean, maximum, minimum, standard deviation, and sum were computed by taking into account the data cells that intersect the boundaries of each municipality and stored in Parquet files. This procedure was carried out for all Brazilian municipalities, and for all available dates, for every indicator available in the weather products (BR-DWGD and TerraClimate projects). This package queries on-line the already calculated statistics on the Parquet files and returns easy-to-use data.frames.
 License: MIT + file LICENSE
-URL: https://rfsaldanha.github.io/brclimr/, https://github.com/rfsaldanha/brclimr
+URL: https://rfsaldanha.github.io/brclimr/,
+    https://github.com/rfsaldanha/brclimr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
