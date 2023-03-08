@@ -16,18 +16,19 @@ knitr::opts_chunk$set(
 # brclimr
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/brclimr)](https://CRAN.R-project.org/package=brclimr)
-[![](https://cranlogs.r-pkg.org/badges/brclimr)](https://cran.r-project.org/package=brclimr)
-[![R-CMD-check](https://github.com/rfsaldanha/brclimr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rfsaldanha/brclimr/actions/workflows/R-CMD-check.yaml)
+
+[![CRAN status](https://www.r-pkg.org/badges/version/brclimr)](https://CRAN.R-project.org/package=brclimr) [![](https://cranlogs.r-pkg.org/badges/brclimr)](https://cran.r-project.org/package=brclimr)
 <!-- badges: end -->
 
 This R package retrieves zonal statistics from weather indicators that were calculated for each municipality in Brazil using data from the BR-DWGD and TerraClimate projects.
 
 Zonal statistics such as mean, maximum, minimum, standard deviation, and sum were computed by taking into account the data cells that intersect the boundaries of each municipality and stored in Parquet files. This procedure was carried out for all Brazilian municipalities, and for all available dates, for every indicator available in the weather products (BR-DWGD and TerraClimate projects). This package queries on-line the already calculated statistics on the Parquet files and returns easy-to-use data.frames.
 
-Details about the used methodology to calculate the zonal statistics are available at *Articles > Methodology*.
+Details about the used methodology to calculate the zonal statistics are available at *Articles \> Methodology*.
 
 ## Installation
+
+Windows users: there is an open [issue](https://github.com/rfsaldanha/brclimr/issues/1) impeding the use of the package on this operational system. If this is your case, we recommend downloading the Parquet files  and locally querying them. More information about this procedure [here](https://rfsaldanha.github.io/brclimr/articles/parquet_files.html).
 
 ### Stable version
 
@@ -58,15 +59,14 @@ fetch_data(
   )
 ```
 
-If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. A list of URLs of the parquet files created for this project is available at *Articles > Parquet files*.
+If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the `arrow` package. A list of URLs of the parquet files created for this project is available at *Articles \> Parquet files*.
 
-A list with the indicators and zonal statistics available by product can be retrieved with the function `product_info`. 
+A list with the indicators and zonal statistics available by product can be retrieved with the function `product_info`.
 
 ```{r eval=FALSE}
 product_info("brdwgd")
 product_info("terraclimate")
 ```
-
 
 ## Another example
 
@@ -133,5 +133,3 @@ ggplot(data = pr, aes(x = date, y = value)) +
   theme_bw() +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
-
-

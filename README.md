@@ -28,6 +28,13 @@ available at *Articles \> Methodology*.
 
 ## Installation
 
+Windows users: there is an open
+[issue](https://github.com/rfsaldanha/brclimr/issues/1) impeding the use
+of the package on this operational system. If this is your case, we
+recommend downloading the Parquet files and locally querying them. More
+information about this procedure
+[here](https://rfsaldanha.github.io/brclimr/articles/parquet_files.html).
+
 ### Stable version
 
 ``` r
