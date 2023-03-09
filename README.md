@@ -29,24 +29,30 @@ available at *Articles \> Methodology*.
 
 ## Installation
 
-Windows users: there is an open
-[issue](https://github.com/rfsaldanha/brclimr/issues/1) impeding the use
-of the package on this operational system. If this is your case, we
-recommend downloading the Parquet files and locally querying them. More
-information about this procedure
-[here](https://rfsaldanha.github.io/brclimr/articles/parquet_files.html).
+### Linux and MacOS
 
-### Stable version
+#### Stable version
 
 ``` r
 install.packages("brclimr")
 ```
 
-### Development version
+#### Development version
 
 ``` r
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
+
+### Windows
+
+``` r
+remotes::install_github(repo = "rfsaldanha/brclimr", ref = "arrow")
+```
+
+Note: due to an [issue](https://github.com/rfsaldanha/brclimr/issues/1)
+with a package dependency, we adopted a different approach to query
+parquet files on S3 buckets under Windows OS. This solution is slower,
+and we expect to archive this branch as soon as the issue is resolved.
 
 ## Example
 
@@ -139,7 +145,7 @@ ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 ``` r
 ggplot(data = pr, aes(x = date, y = value)) +
@@ -156,4 +162,4 @@ ggplot(data = pr, aes(x = date, y = value)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />

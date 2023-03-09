@@ -29,19 +29,27 @@ Details about the used methodology to calculate the zonal statistics are availab
 
 ## Installation
 
-Windows users: there is an open [issue](https://github.com/rfsaldanha/brclimr/issues/1) impeding the use of the package on this operational system. If this is your case, we recommend downloading the Parquet files  and locally querying them. More information about this procedure [here](https://rfsaldanha.github.io/brclimr/articles/parquet_files.html).
+### Linux and MacOS
 
-### Stable version
+#### Stable version
 
 ```{r eval=FALSE}
 install.packages("brclimr")
 ```
 
-### Development version
+#### Development version
 
 ```{r eval=FALSE}
 remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
+
+### Windows
+
+```{r eval=FALSE}
+remotes::install_github(repo = "rfsaldanha/brclimr", ref = "arrow")
+```
+
+Note: due to an [issue](https://github.com/rfsaldanha/brclimr/issues/1) with a package dependency, we adopted a different approach to query parquet files on S3 buckets under Windows OS. This solution is slower, and we expect to archive this branch as soon as the issue is resolved. 
 
 ## Example
 
