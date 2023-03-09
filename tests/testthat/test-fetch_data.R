@@ -10,7 +10,7 @@ test_that("fetch data from brdwgd works", {
     date_end = as.Date("2010-10-20")
   )
 
-  expect_equal(class(res), "data.frame")
+  expect_true("data.frame" %in% class(res))
 })
 
 test_that("fetch data from terraclimate works", {
@@ -25,5 +25,5 @@ test_that("fetch data from terraclimate works", {
     date_end = as.Date("2010-03-01")
   )
 
-  expect_equal(class(res), "data.frame")
+  expect_true("data.frame" %in% class(res))
 })
