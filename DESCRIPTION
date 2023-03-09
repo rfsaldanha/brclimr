@@ -14,13 +14,14 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     checkmate,
-    DBI,
-    duckdb,
+    rlang,
+    dplyr,
+    arrow,
     ggplot2,
-    glue,
     knitr,
     lobstr,
-    rmarkdown
+    rmarkdown,
+    magrittr
 Suggests: 
     testthat (>= 3.0.0),
     spelling
