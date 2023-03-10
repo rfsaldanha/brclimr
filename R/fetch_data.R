@@ -89,7 +89,7 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
     dplyr::filter(.data$name == indi_statname) %>%
     dplyr::filter(.data$date >= date_start & .data$date <= date_end) %>%
     dplyr::filter(.data$code_muni == cod) %>%
-    dplyr::select(.data$code_muni, .data$value) %>%
+    dplyr::select(.data$date, .data$value) %>%
     dplyr::collect()
 
   # Return values
