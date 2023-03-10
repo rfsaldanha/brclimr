@@ -80,14 +80,16 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
 
 
   # Open dataset
-  dataset <- arrow::open_dataset(sources = bucket, partitioning = "indicator")
+  dataset <- arrow::open_dataset(sources = bucket, partitioning = indicator)
 
   # Query dataset
+  cod <- code_muni
   res <- dataset %>%
     dplyr::filter(indicator == indicator) %>%
     dplyr::filter(.data$name == indi_statname) %>%
     dplyr::filter(.data$date >= date_start & .data$date <= date_end) %>%
-    dplyr::filter(.data$code_muni == code_muni) %>%
+    dplyr::filter(.data$code_muni == cod) %>%
+    dplyr::select(.data$code_muni, .data$value) %>%
     dplyr::collect()
 
   # Return values
