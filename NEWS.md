@@ -1,6 +1,6 @@
 # brclimr 0.1.1
 
-* Adopt solution for querying Parquet files that works on all operating systems but it is slower. A development version is available for Linux and MacOS with a faster solution.
+* Adopt solution for querying Parquet files that works on all operating systems but it is slower. A development version is available for Linux and MacOS with a faster solution (duckdb branch).
 * Update author's list.
 * Remove function to create rmd reports.
 
