@@ -35,6 +35,10 @@ available at *Articles \> Methodology*.
 install.packages("brclimr")
 ```
 
+``` r
+remotes::install_github(repo = "rfsaldanha/brclimr")
+```
+
 ### Development version
 
 ``` r
@@ -140,7 +144,7 @@ ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 ``` r
 ggplot(data = pr, aes(x = date, y = value)) +
@@ -157,4 +161,4 @@ ggplot(data = pr, aes(x = date, y = value)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />

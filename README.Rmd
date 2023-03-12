@@ -35,6 +35,10 @@ Details about the used methodology to calculate the zonal statistics are availab
 install.packages("brclimr")
 ```
 
+```{r eval=FALSE}
+remotes::install_github(repo = "rfsaldanha/brclimr")
+```
+
 ### Development version
 
 ```{r eval=FALSE}
