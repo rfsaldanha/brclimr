@@ -1,9 +1,16 @@
 Package: brclimr
 Title: Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities
-Version: 0.1.0
-Authors@R: 
-    person("Raphael", "Saldanha", , "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0003-0652-8466"))
+Version: 0.1.1
+Authors@R: c(
+    person("Raphael", "Saldanha", email = "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-0652-8466")),
+    person("Reza", "Akbarinia", email = "reza.akbarinia@inria.fr", role = "aut"),
+    person("Patrick", "Valduriez", email = "patrick.valduriez@inria.fr", role = "aut"),
+    person("Marcel", "Pedroso", email = "marcel.pedroso@icict.fiocruz.br", role = "aut"),
+    person("Victor", "Ribeiro", email = "victorr@posgrad.lncc.br", role = "aut"),
+    person("Carlos", "Cardoso", email = "cardoso@lncc.br", role = "aut"),
+    person("Eduardo", "Pena", email = "eduardohmpena@gmail.com", role = "aut"),
+    person("Fabio", "Porto", email = "fporto@lncc.br", role = "aut"))
 Description: Fetches zonal statistics from weather indicators that were calculated for each municipality in Brazil using data from the BR-DWGD and TerraClimate projects.
     Zonal statistics such as mean, maximum, minimum, standard deviation, and sum were computed by taking into account the data cells that intersect the boundaries of each municipality and stored in Parquet files. This procedure was carried out for all Brazilian municipalities, and for all available dates, for every indicator available in the weather products (BR-DWGD and TerraClimate projects). This package queries on-line the already calculated statistics on the Parquet files and returns easy-to-use data.frames.
 License: MIT + file LICENSE
@@ -17,10 +24,7 @@ Imports:
     rlang,
     dplyr,
     arrow,
-    ggplot2,
-    knitr,
     lobstr,
-    rmarkdown,
     magrittr
 Suggests: 
     testthat (>= 3.0.0),
