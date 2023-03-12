@@ -15,6 +15,7 @@
 #'
 #' @return A `data.frame` with date and value columns.
 #' @export
+#' @importFrom rlang .data
 #'
 #' @examples
 #' \donttest{
@@ -35,6 +36,11 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
   checkmate::assert_date(date_start)
   checkmate::assert_date(date_end, lower = date_start)
 
+  # Check Arrow capabilities
+  if(!arrow::arrow_with_gcs()){
+    stop("Your {arrow} package installation do not have GCS capabilities. Refer to https://arrow.apache.org/docs/r/articles/install.html")
+  }
+
   # Argument check and retrieve product info
   if(product == "brdwgd"){
     # Check indicator
@@ -45,6 +51,10 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
 
     # Retrieve indicator info
     indi_info <- brclimr::brdwgd_data[[indicator]]
+
+    # Product bucket
+    bucket <- arrow::gs_bucket("brclim-brdwgd", anonymous = TRUE)
+
   } else if(product == "terraclimate"){
     # Check indicator
     checkmate::assert_choice(
@@ -54,10 +64,10 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
 
     # Retrive indicator info
     indi_info <- brclimr::terraclimate_data[[indicator]]
-  }
 
-  # Retrive indicator link
-  indi_link <- indi_info[["link"]]
+    # Product bucket
+    bucket <- arrow::gs_bucket("brclim-terraclimate", anonymous = TRUE)
+  }
 
   # Check statistics
   checkmate::assert_choice(
@@ -69,27 +79,19 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
   indi_statname <- indi_info[["stats"]][[statistics]]
 
 
-  # Create duckdb connection
-  conn <- DBI::dbConnect(duckdb::duckdb())
+  # Open dataset
+  dataset <- arrow::open_dataset(sources = bucket, partitioning = indicator)
 
-  # Install and load httpfs
-  DBI::dbExecute(conn, "INSTALL httpfs;")
-  DBI::dbExecute(conn, "LOAD httpfs;")
+  # Query dataset
+  cod <- code_muni
+  res <- dataset %>%
+    dplyr::filter(indicator == indicator) %>%
+    dplyr::filter(.data$name == indi_statname) %>%
+    dplyr::filter(.data$date >= date_start & .data$date <= date_end) %>%
+    dplyr::filter(.data$code_muni == cod) %>%
+    dplyr::select(.data$date, .data$value) %>%
+    dplyr::collect()
 
-  # Fetch and return data
-  res <- DBI::dbGetQuery(
-    conn,
-    glue::glue("SELECT date, value
-               FROM '{indi_link}'
-               WHERE (code_muni = {code_muni} AND
-               date >= '{date_start}' AND
-               date <= '{date_end}' AND
-               name = '{indi_statname}')")
-  )
-
-  # Disconnect database
-  DBI::dbDisconnect(conn, shutdown = TRUE)
-
-  # Return falues
+  # Return values
   return(res)
 }

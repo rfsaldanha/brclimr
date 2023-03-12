@@ -29,27 +29,19 @@ Details about the used methodology to calculate the zonal statistics are availab
 
 ## Installation
 
-### Linux and MacOS
-
-#### Stable version
+### Stable version
 
 ```{r eval=FALSE}
 install.packages("brclimr")
 ```
 
-#### Development version
+### Development version
 
 ```{r eval=FALSE}
-remotes::install_github(repo = "rfsaldanha/brclimr")
+remotes::install_github(repo = "rfsaldanha/brclimr", ref = "duckdb")
 ```
 
-### Windows
-
-```{r eval=FALSE}
-remotes::install_github(repo = "rfsaldanha/brclimr", ref = "arrow")
-```
-
-Note: due to an [issue](https://github.com/rfsaldanha/brclimr/issues/1) with a package dependency, we adopted a different approach to query parquet files on S3 buckets under Windows OS. This solution is slower, and we expect to archive this branch as soon as the issue is resolved. 
+Note: the stable version adopted a universal solution for querying Parquet files that works on all operating systems but it is slower. A development version is available for Linux and MacOS with a faster solution. More details on this [issue](https://github.com/rfsaldanha/brclimr/issues/1).
 
 ## Example
 

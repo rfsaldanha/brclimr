@@ -2,7 +2,6 @@
 
 brdwgd_data <- list(
   "tmax" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet",
     "name" = "Maximum temperature",
     "unit" = "\u00B0C",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -14,7 +13,6 @@ brdwgd_data <- list(
     )
   ),
   "tmin" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet",
     "name" = "Minimum temperature",
     "unit" = "\u00B0C",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -26,7 +24,6 @@ brdwgd_data <- list(
     )
   ),
   "pr" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpr.parquet",
     "name" = "Precipitation",
     "unit" = "mm",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -39,7 +36,6 @@ brdwgd_data <- list(
     )
   ),
   "eto" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet",
     "name" = "Evapotranspiration",
     "unit" = "mm",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -52,7 +48,6 @@ brdwgd_data <- list(
     )
   ),
   "rh" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frh.parquet",
     "name" = "Relative humidity",
     "unit" = "%",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -64,7 +59,6 @@ brdwgd_data <- list(
     )
   ),
   "rs" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frs.parquet",
     "name" = "Solar radiation",
     "unit" = "MJ/m2",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
@@ -76,7 +70,6 @@ brdwgd_data <- list(
     )
   ),
   "u2" = list(
-    "link" = "https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fu2.parquet",
     "name" = "Wind speed",
     "unit" = "m/2",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",

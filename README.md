@@ -29,30 +29,23 @@ available at *Articles \> Methodology*.
 
 ## Installation
 
-### Linux and MacOS
-
-#### Stable version
+### Stable version
 
 ``` r
 install.packages("brclimr")
 ```
 
-#### Development version
+### Development version
 
 ``` r
-remotes::install_github(repo = "rfsaldanha/brclimr")
+remotes::install_github(repo = "rfsaldanha/brclimr", ref = "duckdb")
 ```
 
-### Windows
-
-``` r
-remotes::install_github(repo = "rfsaldanha/brclimr", ref = "arrow")
-```
-
-Note: due to an [issue](https://github.com/rfsaldanha/brclimr/issues/1)
-with a package dependency, we adopted a different approach to query
-parquet files on S3 buckets under Windows OS. This solution is slower,
-and we expect to archive this branch as soon as the issue is resolved.
+Note: the stable version adopted a universal solution for querying
+Parquet files that works on all operating systems but it is slower. A
+development version is available for Linux and MacOS with a faster
+solution. More details on this
+[issue](https://github.com/rfsaldanha/brclimr/issues/1).
 
 ## Example
 
@@ -72,13 +65,15 @@ fetch_data(
     date_start = as.Date("2010-10-15"),
     date_end = as.Date("2010-10-20")
   )
-#>         date    value
-#> 1 2010-10-15 74.48010
-#> 2 2010-10-16 73.53403
-#> 3 2010-10-17 77.84841
-#> 4 2010-10-18 90.10590
-#> 5 2010-10-19 74.33522
-#> 6 2010-10-20 71.50061
+#> # A tibble: 6 × 2
+#>   date       value
+#>   <date>     <dbl>
+#> 1 2010-10-15  74.5
+#> 2 2010-10-16  73.5
+#> 3 2010-10-17  77.8
+#> 4 2010-10-18  90.1
+#> 5 2010-10-19  74.3
+#> 6 2010-10-20  71.5
 ```
 
 If you need to query several municipalities, indicators and zonal
@@ -145,7 +140,7 @@ ggplot(data = rbind(tmax, tmin), aes(x = date, y = value, color = name)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ``` r
 ggplot(data = pr, aes(x = date, y = value)) +
@@ -162,4 +157,4 @@ ggplot(data = pr, aes(x = date, y = value)) +
   theme(legend.position = "bottom", legend.direction = "horizontal")
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
