@@ -13,7 +13,7 @@
 #' @details
 #' For products with monthly data, like `terraclimate`, inform the start and end dates with the fist day of the month. Example: `as.Date("2008-06-01")` for June, 2008.
 #'
-#' @return A `data.frame` with date and value columns.
+#' @return A `tibble` with date and value columns.
 #' @export
 #' @importFrom rlang .data
 #'
