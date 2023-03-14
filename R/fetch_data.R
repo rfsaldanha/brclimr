@@ -18,7 +18,7 @@
 #' @importFrom rlang .data
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' fetch_data(
 #'     code_muni = 3304557,
 #'     product = "brdwgd",
