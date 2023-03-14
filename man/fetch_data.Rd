@@ -29,7 +29,7 @@ Fetch zonal statistics from a product for given municipality code and dates.
 For products with monthly data, like \code{terraclimate}, inform the start and end dates with the fist day of the month. Example: \code{as.Date("2008-06-01")} for June, 2008.
 }
 \examples{
-\donttest{
+\dontrun{
 fetch_data(
     code_muni = 3304557,
     product = "brdwgd",
