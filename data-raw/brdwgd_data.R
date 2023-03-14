@@ -3,7 +3,7 @@
 brdwgd_data <- list(
   "tmax" = list(
     "name" = "Maximum temperature",
-    "unit" = "\u00B0C",
+    "unit" = "Degree Celsius",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmax_min",
@@ -14,7 +14,7 @@ brdwgd_data <- list(
   ),
   "tmin" = list(
     "name" = "Minimum temperature",
-    "unit" = "\u00B0C",
+    "unit" = "Degree Celsius",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "Tmin_min",
@@ -49,7 +49,7 @@ brdwgd_data <- list(
   ),
   "rh" = list(
     "name" = "Relative humidity",
-    "unit" = "%",
+    "unit" = "Percentage",
     "date_range" = "Daily, 1961-01-01 to 2020-07-31",
     "stats" = list(
       "min" = "RH_min",

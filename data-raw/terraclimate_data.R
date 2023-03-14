@@ -4,7 +4,7 @@ terraclimate_data <- list(
   "tmax" = list(
     "name" = "Maximum temperature",
     "detail" = "Average for month",
-    "unit" = "\u00B0C",
+    "unit" = "Degree Celsius",
     "date_range" = "Monthly, 1958-01 to 2021-12",
     "stats" = list(
       "min" = "tmax_min",
@@ -16,7 +16,7 @@ terraclimate_data <- list(
   "tmin" = list(
     "name" = "Minimum temperature",
     "detail" = "Average for month",
-    "unit" = "\u00B0C",
+    "unit" = "Degree Celsius",
     "date_range" = "Monthly, 1958-01 to 2021-12",
     "stats" = list(
       "min" = "tmin_min",
