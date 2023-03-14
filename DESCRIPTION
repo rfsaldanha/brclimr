@@ -1,6 +1,6 @@
 Package: brclimr
 Title: Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Raphael", "Saldanha", email = "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0652-8466")),
