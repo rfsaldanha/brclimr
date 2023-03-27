@@ -13,30 +13,30 @@ If you need to query several municipalities, indicators and zonal statistics, we
 
 ## BR-DWGD (13.65 GB)
 
--    Evapotranspiration: `r brclimr::brdwgd_data[["eto"]][["link"]]`
--    Precipitation: `r brclimr::brdwgd_data[["pr"]][["link"]]`
--    Relative Humidity: `r brclimr::brdwgd_data[["rh"]][["link"]]`
--    Solar radiation: `r brclimr::brdwgd_data[["rs"]][["link"]]`
--    Maximum temperature: `r brclimr::brdwgd_data[["tmax"]][["link"]]`
--    Minimum temperature: `r brclimr::brdwgd_data[["tmin"]][["link"]]`
--    Wind speed: `r brclimr::brdwgd_data[["u2"]][["link"]]`
+-    Evapotranspiration: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet
+-    Precipitation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpr.parquet
+-    Relative Humidity: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frh.parquet
+-    Solar radiation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frs.parquet
+-    Maximum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet
+-    Minimum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet
+-    Wind speed: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fu2.parquet
 
 
 ## TerraClimate (1.02 GB)
--    Actual Evapotranspiration: `r brclimr::terraclimate_data[["aet"]][["link"]]`
--    Climate Water Deficit: `r brclimr::terraclimate_data[["def"]][["link"]]`
--    Potential evapotranspiration: `r brclimr::terraclimate_data[["pet"]][["link"]]`
--    Precipitation: `r brclimr::terraclimate_data[["ppt"]][["link"]]`
--    Runoff: `r brclimr::terraclimate_data[["q"]][["link"]]`
--    Soil Moisture: `r brclimr::terraclimate_data[["soil"]][["link"]]`
--    Downward surface shortwave radiation: `r brclimr::terraclimate_data[["srad"]][["link"]]`
--    Snow water equivalent: `r brclimr::terraclimate_data[["swe"]][["link"]]`
--    Max Temperature: `r brclimr::terraclimate_data[["tmax"]][["link"]]`
--    Min Temperature: `r brclimr::terraclimate_data[["tmin"]][["link"]]`
--    Vapor pressure: `r brclimr::terraclimate_data[["vap"]][["link"]]`
--    Wind speed: `r brclimr::terraclimate_data[["ws"]][["link"]]`
--    Vapor Pressure Deficit: `r brclimr::terraclimate_data[["vpd"]][["link"]]`
--    PDSI: `r brclimr::terraclimate_data[["pdsi"]][["link"]]`
+-    Actual Evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Faet.parquet
+-    Climate Water Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fdef.parquet
+-    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet
+-    Precipitation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpet.parquet
+-    Runoff: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fq.parquet
+-    Soil Moisture: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsoil.parquet
+-    Downward surface shortwave radiation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsrad.parquet
+-    Snow water equivalent: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fswe.parquet
+-    Max Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet
+-    Min Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet
+-    Vapor pressure: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvap.parquet
+-    Wind speed: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fws.parquet
+-    Vapor Pressure Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvpd.parquet
+-    PDSI: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet
 
 ## Query example
 
