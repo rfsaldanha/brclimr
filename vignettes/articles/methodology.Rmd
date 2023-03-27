@@ -17,7 +17,7 @@ The Brazilian municipality boundaries from 2010 were used as a reference, as pro
 
 Thus, for each municipality, a set of zonal statistics of weather indicators is calculated, at the same time resolution of the source dataset.
 
-![](zonal_statistics.png)
+![](images/zonal_statistics.png)
 
 Those datasets are available as parquet files on S3 buckets and queried by this project functions to retrieve data for a given municipality, dates, weather indicators, and desired zonal statistics.
 
@@ -29,14 +29,15 @@ The BR-DWGD dataset presents daily meteorological data interpolated to a grid wi
 
 The following weather indicators are available from the BR-DWGD study: precipitation (mm), minimum temperature (°C), maximum temperature (°C), solar radiation ($MJ\cdot m^{-2}$), wind speed at 2m height ($m\cdot s^{-1}$) and relative humidity (%).
 
-
 ```{r brdwgd_info}
 brclimr::product_info(product = "brdwgd")
 ```
 
 ## TerraClimate
 
-> Abatzoglou, J. T., Dobrowski, S. Z., Parks, S. A., Hegewisch, K. C. (2018). TerraClimate, a high-resolution global dataset of monthly climate and climatic water balance from 1958-2015. Scientific Data, 5. https://doi.org/10.1038/sdata.2017.191</div>
+> Abatzoglou, J. T., Dobrowski, S. Z., Parks, S. A., Hegewisch, K. C. (2018). TerraClimate, a high-resolution global dataset of monthly climate and climatic water balance from 1958-2015. Scientific Data, 5. <https://doi.org/10.1038/sdata.2017.191>
+>
+> </div>
 
 The TerraClimate dataset presents monthly meteorological data interpolated to a grid with 0.04° $\times$ 0.04° (1/24th degree) of spatial resolution with world cover, with monthly data from January, 1958, to December, 2021.
 
@@ -45,4 +46,3 @@ The following weather indicators are available from the TerraClimate study: Actu
 ```{r terraclimate_info}
 brclimr::product_info(product = "terraclimate")
 ```
-
