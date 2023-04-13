@@ -13,6 +13,8 @@ If you need to query several municipalities, indicators and zonal statistics, we
 
 ## BR-DWGD (13.65 GB)
 
+[![](https://img.shields.io/badge/doi-10.5281/zenodo.7824920-green.svg)](https://doi.org/10.5281/zenodo.7824920)
+
 -    Evapotranspiration: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/eto.parquet
 -    Precipitation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/pr.parquet
 -    Relative Humidity: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/rh.parquet
@@ -23,6 +25,9 @@ If you need to query several municipalities, indicators and zonal statistics, we
 
 
 ## TerraClimate (1.02 GB)
+
+[![](https://img.shields.io/badge/doi-10.5281/zenodo.7825777-green.svg)](https://doi.org/10.5281/zenodo.7825777)
+
 -    Actual Evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/aet.parquet
 -    Climate Water Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/def.parquet
 -    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/ppt.parquet
