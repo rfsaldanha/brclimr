@@ -13,30 +13,30 @@ If you need to query several municipalities, indicators and zonal statistics, we
 
 ## BR-DWGD (13.65 GB)
 
--    Evapotranspiration: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Feto.parquet
--    Precipitation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpr.parquet
--    Relative Humidity: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frh.parquet
--    Solar radiation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Frs.parquet
--    Maximum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet
--    Minimum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet
--    Wind speed: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet%2Fu2.parquet
+-    Evapotranspiration: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/eto.parquet
+-    Precipitation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/pr.parquet
+-    Relative Humidity: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/rh.parquet
+-    Solar radiation: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/rs.parquet
+-    Maximum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/tmax.parquet
+-    Minimum temperature: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/tmin.parquet
+-    Wind speed: https://brdwgd.nyc3.cdn.digitaloceanspaces.com/parquet/u2.parquet
 
 
 ## TerraClimate (1.02 GB)
--    Actual Evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Faet.parquet
--    Climate Water Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fdef.parquet
--    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet
--    Precipitation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpet.parquet
--    Runoff: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fq.parquet
--    Soil Moisture: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsoil.parquet
--    Downward surface shortwave radiation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsrad.parquet
--    Snow water equivalent: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fswe.parquet
--    Max Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet
--    Min Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet
--    Vapor pressure: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvap.parquet
--    Wind speed: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fws.parquet
--    Vapor Pressure Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvpd.parquet
--    PDSI: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet
+-    Actual Evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/aet.parquet
+-    Climate Water Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/def.parquet
+-    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/ppt.parquet
+-    Precipitation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/pet.parquet
+-    Runoff: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/q.parquet
+-    Soil Moisture: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/soil.parquet
+-    Downward surface shortwave radiation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/srad.parquet
+-    Snow water equivalent: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/swe.parquet
+-    Max Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/tmax.parquet
+-    Min Temperature: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/tmin.parquet
+-    Vapor pressure: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/vap.parquet
+-    Wind speed: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/ws.parquet
+-    Vapor Pressure Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/vpd.parquet
+-    PDSI: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/pdsi.parquet
 
 ## Query example
 
