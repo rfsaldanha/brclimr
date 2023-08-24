@@ -30,8 +30,8 @@ If you need to query several municipalities, indicators and zonal statistics, we
 
 -    Actual Evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/aet.parquet
 -    Climate Water Deficit: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/def.parquet
--    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/ppt.parquet
--    Precipitation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/pet.parquet
+-    Potential evapotranspiration: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/pet.parquet
+-    Precipitation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/ppt.parquet
 -    Runoff: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/q.parquet
 -    Soil Moisture: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/soil.parquet
 -    Downward surface shortwave radiation: https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet/srad.parquet
