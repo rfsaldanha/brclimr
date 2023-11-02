@@ -1,6 +1,8 @@
 url: https://rfsaldanha.github.io/brclimr/
 template:
-  bootstrap: 5
+  bootstrap: 51
+  params:
+    ganalytics: G-2M7VLSRDCB
 
 navbar:
   structure:
