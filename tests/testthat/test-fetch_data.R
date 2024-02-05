@@ -1,3 +1,5 @@
+skip_if_not_installed("arrow")
+
 test_that("fetch data from brdwgd works", {
   skip_on_cran()
 

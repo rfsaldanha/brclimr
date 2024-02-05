@@ -23,10 +23,10 @@ Imports:
     checkmate,
     rlang,
     dplyr,
-    arrow,
     lobstr,
     magrittr
-Suggests: 
+Suggests:
+    arrow,
     testthat (>= 3.0.0),
     spelling
 Config/testthat/edition: 3
@@ -34,3 +34,4 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Language: en-US
+Additional_repositories: https://p3m.dev/cran/2024-02-02/

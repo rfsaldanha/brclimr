@@ -17,7 +17,7 @@
 #' @export
 #' @importFrom rlang .data
 #'
-#' @examples
+#' @examplesIf requireNamespace("arrow", quietly = TRUE)
 #' \dontrun{
 #' fetch_data(
 #'     code_muni = 3304557,
@@ -37,6 +37,14 @@ fetch_data <- function(code_muni, product, indicator, statistics, date_start, da
   checkmate::assert_date(date_end, lower = date_start)
 
   # Check Arrow capabilities
+  if(!requireNamespace("arrow", quietly = TRUE)){
+    msg <- paste(
+      "The 'arrow' package is required but is not available. Install it with:",
+      'install.packages("arrow", repos = c("https://p3m.dev/cran/2024-02-02", getOption("repos")))',
+      sep = "\n"
+    )
+    stop(msg, call. = FALSE)
+  }
   if(!arrow::arrow_with_gcs()){
     stop("Your {arrow} package installation do not have GCS capabilities. Refer to https://arrow.apache.org/docs/r/articles/install.html")
   }
