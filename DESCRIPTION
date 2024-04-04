@@ -22,10 +22,11 @@ RoxygenNote: 7.2.3
 Imports: 
     checkmate,
     rlang,
-    dplyr,
-    arrow,
     lobstr,
-    magrittr
+    magrittr,
+    DBI,
+    duckdb,
+    glue
 Suggests: 
     testthat (>= 3.0.0),
     spelling
