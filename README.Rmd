@@ -35,17 +35,11 @@ Details about the used methodology to calculate the zonal statistics are availab
 install.packages("brclimr")
 ```
 
-```{r eval=FALSE}
-remotes::install_github(repo = "rfsaldanha/brclimr")
-```
-
 ### Development version
 
 ```{r eval=FALSE}
-remotes::install_github(repo = "rfsaldanha/brclimr", ref = "duckdb")
+remotes::install_github(repo = "rfsaldanha/brclimr")
 ```
-
-Note: the stable version adopted a universal solution for querying Parquet files that works on all operating systems but it is slower. A development version is available for Linux and MacOS with a faster solution. More details on this [issue](https://github.com/rfsaldanha/brclimr/issues/1).
 
 ## Example
 
