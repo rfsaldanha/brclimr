@@ -8,8 +8,8 @@
 <meta name="description" content="brclimr">
 <title>Methodology • brclimr</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Methodology">
 <meta property="og:description" content="brclimr">
@@ -32,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">brclimr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,7 +96,7 @@ boundary in a map, statistics like average, maximum value, minimum
 value, standard deviation, and sum are obtained to represent the cell’s
 values that intersect the boundary.</p>
 <p>The Brazilian municipality boundaries from 2010 were used as a
-reference, as provided by the <a href="https://github.com/ipeaGIT/geobr" class="external-link">geobr</a> package.</p>
+reference, as provided by the <a href="https://ipeagit.github.io/geobr/" class="external-link">geobr</a> package.</p>
 <p>Thus, for each municipality, a set of zonal statistics of weather
 indicators is calculated, at the same time resolution of the source
 dataset.</p>
@@ -129,8 +129,9 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <code class="sourceCode R"><span><span class="fu">brclimr</span><span class="fu">::</span><span class="fu"><a href="../reference/product_info.html">product_info</a></span><span class="op">(</span>product <span class="op">=</span> <span class="st">"brdwgd"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; ├─tmax: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Maximum temperature"</span></span></span>
-<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"Degree Celsius"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
 <span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"Tmax_min"</span></span></span>
@@ -138,8 +139,9 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Tmax_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Tmax_sd"</span></span></span>
 <span><span class="co">#&gt; ├─tmin: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Minimum temperature"</span></span></span>
-<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"Degree Celsius"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
 <span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"Tmin_min"</span></span></span>
@@ -147,6 +149,7 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Tmin_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Tmin_sd"</span></span></span>
 <span><span class="co">#&gt; ├─pr: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Precipitation"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
@@ -157,6 +160,7 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"pr_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"pr_sum"</span></span></span>
 <span><span class="co">#&gt; ├─eto: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Evapotranspiration"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
@@ -167,8 +171,9 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"ETo_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"ETo_sd"</span></span></span>
 <span><span class="co">#&gt; ├─rh: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Relative humidity"</span></span></span>
-<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"Percentage"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"%"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
 <span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"RH_min"</span></span></span>
@@ -176,6 +181,7 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"RH_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"RH_sd"</span></span></span>
 <span><span class="co">#&gt; ├─rs: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Solar radiation"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"MJ/m2"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
@@ -185,6 +191,7 @@ m^{-2}\)</span>), wind speed at 2m height (<span class="math inline">\(m\cdot s^
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"Rs_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"Rs_sd"</span></span></span>
 <span><span class="co">#&gt; └─u2: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;   ├─link: <span style="color: #0000BB;">"https://brdwgd.nyc3.cdn.digitalo..."</span></span></span>
 <span><span class="co">#&gt;   ├─name: <span style="color: #0000BB;">"Wind speed"</span></span></span>
 <span><span class="co">#&gt;   ├─unit: <span style="color: #0000BB;">"m/2"</span></span></span>
 <span><span class="co">#&gt;   ├─date_range: <span style="color: #0000BB;">"Daily, 1961-01-01 to 2020-07-31"</span></span></span>
@@ -220,9 +227,10 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <code class="sourceCode R"><span><span class="fu">brclimr</span><span class="fu">::</span><span class="fu"><a href="../reference/product_info.html">product_info</a></span><span class="op">(</span>product <span class="op">=</span> <span class="st">"terraclimate"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; ├─tmax: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Maximum temperature"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
-<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"Degree Celsius"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
 <span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"tmax_min"</span></span></span>
@@ -230,9 +238,10 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"tmax_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"tmax_sd"</span></span></span>
 <span><span class="co">#&gt; ├─tmin: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Minimum temperature"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
-<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"Degree Celsius"</span></span></span>
+<span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"°C"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
 <span><span class="co">#&gt; │ └─stats: <span style="color: #555555;">&lt;list&gt;</span></span></span>
 <span><span class="co">#&gt; │   ├─min: <span style="color: #0000BB;">"tmin_min"</span></span></span>
@@ -240,6 +249,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"tmin_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"tmin_sd"</span></span></span>
 <span><span class="co">#&gt; ├─ppt: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Precipitation"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -251,6 +261,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"ppt_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"ppt_sum"</span></span></span>
 <span><span class="co">#&gt; ├─aet: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Actual Evapotranspiration"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -262,6 +273,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"aet_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"aet_sum"</span></span></span>
 <span><span class="co">#&gt; ├─def: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Climate Water Deficit"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -273,6 +285,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"def_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"def_sum"</span></span></span>
 <span><span class="co">#&gt; ├─pdsi: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Palmer Drought Severity Index"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"unitless"</span></span></span>
@@ -283,6 +296,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"PDSI_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"PDSI_sd"</span></span></span>
 <span><span class="co">#&gt; ├─pet: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Potential evapotranspiration"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -294,6 +308,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"pet_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"pet_sum"</span></span></span>
 <span><span class="co">#&gt; ├─q: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Runoff"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Monthly total"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -305,6 +320,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"q_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"q_sum"</span></span></span>
 <span><span class="co">#&gt; ├─soil: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Soil Moisture"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Total column, at end of month"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -316,6 +332,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"soil_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"soil_sum"</span></span></span>
 <span><span class="co">#&gt; ├─srad: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Downward surface shortwave radia..."</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"W/m2"</span></span></span>
 <span><span class="co">#&gt; │ ├─date_range: <span style="color: #0000BB;">"Monthly, 1958-01 to 2021-12"</span></span></span>
@@ -326,6 +343,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"srad_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"srad_sum"</span></span></span>
 <span><span class="co">#&gt; ├─swe: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Snow water equivalent"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"At end of month"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"mm"</span></span></span>
@@ -337,6 +355,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─sd: <span style="color: #0000BB;">"swe_sd"</span></span></span>
 <span><span class="co">#&gt; │   └─sum: <span style="color: #0000BB;">"swe_sum"</span></span></span>
 <span><span class="co">#&gt; ├─vap: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Vapor pressure"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span></span>
@@ -347,6 +366,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"vap_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"vap_sd"</span></span></span>
 <span><span class="co">#&gt; ├─vpd: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt; │ ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt; │ ├─name: <span style="color: #0000BB;">"Vapor Pressure Deficit"</span></span></span>
 <span><span class="co">#&gt; │ ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
 <span><span class="co">#&gt; │ ├─unit: <span style="color: #0000BB;">"kPa"</span></span></span>
@@ -357,6 +377,7 @@ Pressure Deficit (kpa) and Palmer Drought Severity Index.</p>
 <span><span class="co">#&gt; │   ├─mean: <span style="color: #0000BB;">"vpd_mean"</span></span></span>
 <span><span class="co">#&gt; │   └─sd: <span style="color: #0000BB;">"vpd_sd"</span></span></span>
 <span><span class="co">#&gt; └─ws: <span style="color: #555555;">&lt;list&gt;</span></span></span>
+<span><span class="co">#&gt;   ├─link: <span style="color: #0000BB;">"https://terraclimate.nyc3.cdn.di..."</span></span></span>
 <span><span class="co">#&gt;   ├─name: <span style="color: #0000BB;">"Wind speed"</span></span></span>
 <span><span class="co">#&gt;   ├─detail: <span style="color: #0000BB;">"Average for month"</span></span></span>
 <span><span class="co">#&gt;   ├─unit: <span style="color: #0000BB;">"m/s"</span></span></span>
