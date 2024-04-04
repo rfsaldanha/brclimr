@@ -2,9 +2,10 @@
 
 terraclimate_data <- list(
   "tmax" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmax.parquet",
     "name" = "Maximum temperature",
     "detail" = "Average for month",
-    "unit" = "Degree Celsius",
+    "unit" = "\u00B0C",
     "date_range" = "Monthly, 1958-01 to 2021-12",
     "stats" = list(
       "min" = "tmax_min",
@@ -14,9 +15,10 @@ terraclimate_data <- list(
     )
   ),
   "tmin" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Ftmin.parquet",
     "name" = "Minimum temperature",
     "detail" = "Average for month",
-    "unit" = "Degree Celsius",
+    "unit" = "\u00B0C",
     "date_range" = "Monthly, 1958-01 to 2021-12",
     "stats" = list(
       "min" = "tmin_min",
@@ -26,6 +28,7 @@ terraclimate_data <- list(
     )
   ),
   "ppt" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fppt.parquet",
     "name" = "Precipitation",
     "detail" = "Monthly total",
     "unit" = "mm",
@@ -39,6 +42,7 @@ terraclimate_data <- list(
     )
   ),
   "aet" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Faet.parquet",
     "name" = "Actual Evapotranspiration",
     "detail" = "Monthly total",
     "unit" = "mm",
@@ -52,6 +56,7 @@ terraclimate_data <- list(
     )
   ),
   "def" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fdef.parquet",
     "name" = "Climate Water Deficit",
     "detail" = "Monthly total",
     "unit" = "mm",
@@ -65,6 +70,7 @@ terraclimate_data <- list(
     )
   ),
   "pdsi" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpdsi.parquet",
     "name" = "Palmer Drought Severity Index",
     "detail" = "At end of month",
     "unit" = "unitless",
@@ -77,6 +83,7 @@ terraclimate_data <- list(
     )
   ),
   "pet" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fpet.parquet",
     "name" = "Potential evapotranspiration",
     "detail" = "Monthly total",
     "unit" = "mm",
@@ -90,6 +97,7 @@ terraclimate_data <- list(
     )
   ),
   "q" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fq.parquet",
     "name" = "Runoff",
     "detail" = "Monthly total",
     "unit" = "mm",
@@ -103,6 +111,7 @@ terraclimate_data <- list(
     )
   ),
   "soil" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsoil.parquet",
     "name" = "Soil Moisture",
     "detail" = "Total column, at end of month",
     "unit" = "mm",
@@ -116,6 +125,7 @@ terraclimate_data <- list(
     )
   ),
   "srad" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fsrad.parquet",
     "name" = "Downward surface shortwave radiation",
     "unit" = "W/m2",
     "date_range" = "Monthly, 1958-01 to 2021-12",
@@ -128,6 +138,7 @@ terraclimate_data <- list(
     )
   ),
   "swe" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fswe.parquet",
     "name" = "Snow water equivalent",
     "detail" = "At end of month",
     "unit" = "mm",
@@ -141,6 +152,7 @@ terraclimate_data <- list(
     )
   ),
   "vap" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvap.parquet",
     "name" = "Vapor pressure",
     "detail" = "Average for month",
     "unit" = "kPa",
@@ -153,6 +165,7 @@ terraclimate_data <- list(
     )
   ),
   "vpd" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fvpd.parquet",
     "name" = "Vapor Pressure Deficit",
     "detail" = "Average for month",
     "unit" = "kPa",
@@ -165,6 +178,7 @@ terraclimate_data <- list(
     )
   ),
   "ws" = list(
+    "link" = "https://terraclimate.nyc3.cdn.digitaloceanspaces.com/parquet%2Fws.parquet",
     "name" = "Wind speed",
     "detail" = "Average for month",
     "unit" = "m/s",
