@@ -1,6 +1,6 @@
 Package: brclimr
 Title: Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: c(
     person("Raphael", "Saldanha", email = "raphael.de-freitas-saldanha@inria.fr", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0652-8466")),
@@ -18,14 +18,15 @@ URL: https://rfsaldanha.github.io/brclimr/,
     https://github.com/rfsaldanha/brclimr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports: 
     checkmate,
     rlang,
-    dplyr,
-    arrow,
     lobstr,
-    magrittr
+    magrittr,
+    DBI,
+    duckdb,
+    glue
 Suggests: 
     testthat (>= 3.0.0),
     spelling

@@ -1,7 +1,10 @@
+# brclimr 0.2.0
+* Adopt Digital Ocean S3 as files repository.
+
 # brclimr 0.1.2
 * Do not run example on fetch_data function to avoid error on CRAN tests.
 * Removed possible non-ASCII characters from products info.
-* Correction on fetch_data function documentation.
+* Correction on `fetch_data` function documentation.
 
 # brclimr 0.1.1
 
