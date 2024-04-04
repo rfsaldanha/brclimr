@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   methodology: methodology.html
   parquet_files: parquet_files.html
-last_built: 2024-04-04T07:39Z
+last_built: 2024-04-04T07:42Z
 urls:
   reference: https://rfsaldanha.github.io/brclimr/reference
   article: https://rfsaldanha.github.io/brclimr/articles

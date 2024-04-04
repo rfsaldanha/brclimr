@@ -91,22 +91,19 @@
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"brclimr"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"rfsaldanha/brclimr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="development-version">Development version<a class="anchor" aria-label="anchor" href="#development-version"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"rfsaldanha/brclimr"</span>, ref <span class="op">=</span> <span class="st">"duckdb"</span><span class="op">)</span></span></code></pre></div>
-<p>Note: the stable version adopted a universal solution for querying Parquet files that works on all operating systems but it is slower. A development version is available for Linux and MacOS with a faster solution. More details on this <a href="https://github.com/rfsaldanha/brclimr/issues/1" class="external-link">issue</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"rfsaldanha/brclimr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>To fetch data for a specific product, indicator and statistic, use the <code>fetch_data</code> function. For example: Rio de Janeiro, RJ (IBGE code number 3304557), data product “brdwgd”, average relative humidity, from 2010-10-15 to 2010-10-20.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rfsaldanha.github.io/brclimr/">brclimr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/fetch_data.html">fetch_data</a></span><span class="op">(</span></span>
@@ -117,25 +114,23 @@
 <span>    date_start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2010-10-15"</span><span class="op">)</span>,</span>
 <span>    date_end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2010-10-20"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6 × 2</span></span>
-<span><span class="co">#&gt;   date       value</span></span>
-<span><span class="co">#&gt;   &lt;date&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 2010-10-15  74.5</span></span>
-<span><span class="co">#&gt; 2 2010-10-16  73.5</span></span>
-<span><span class="co">#&gt; 3 2010-10-17  77.8</span></span>
-<span><span class="co">#&gt; 4 2010-10-18  90.1</span></span>
-<span><span class="co">#&gt; 5 2010-10-19  74.3</span></span>
-<span><span class="co">#&gt; 6 2010-10-20  71.5</span></span></code></pre></div>
+<span><span class="co">#&gt;         date    value</span></span>
+<span><span class="co">#&gt; 1 2010-10-15 74.48010</span></span>
+<span><span class="co">#&gt; 2 2010-10-16 73.53403</span></span>
+<span><span class="co">#&gt; 3 2010-10-17 77.84841</span></span>
+<span><span class="co">#&gt; 4 2010-10-18 90.10590</span></span>
+<span><span class="co">#&gt; 5 2010-10-19 74.33522</span></span>
+<span><span class="co">#&gt; 6 2010-10-20 71.50061</span></span></code></pre></div>
 <p>If you need to query several municipalities, indicators and zonal statistics, we recommend to download and locally query the parquet files using the <code>arrow</code> package. A list of URLs of the parquet files created for this project is available at <em>Articles &gt; Parquet files</em>.</p>
 <p>A list with the indicators and zonal statistics available by product can be retrieved with the function <code>product_info</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/product_info.html">product_info</a></span><span class="op">(</span><span class="st">"brdwgd"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/product_info.html">product_info</a></span><span class="op">(</span><span class="st">"terraclimate"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="another-example">Another example<a class="anchor" aria-label="anchor" href="#another-example"></a>
 </h2>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tmax</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fetch_data.html">fetch_data</a></span><span class="op">(</span></span>
 <span>  code_muni <span class="op">=</span> <span class="fl">3303401</span>,</span>
 <span>  product <span class="op">=</span> <span class="st">"brdwgd"</span>,</span>
@@ -165,7 +160,7 @@
 <span></span>
 <span><span class="va">tmax</span><span class="op">$</span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Tmax_avg"</span></span>
 <span><span class="va">tmin</span><span class="op">$</span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Tmin_avg"</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="va">tmax</span>, <span class="va">tmin</span><span class="op">)</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -180,8 +175,8 @@
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_bw</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>, legend.direction <span class="op">=</span> <span class="st">"horizontal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-8-1.png" width="100%"></p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">pr</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">date</span>, y <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_x_date</span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"2 months"</span>, date_labels <span class="op">=</span>  <span class="st">"%m/%y"</span><span class="op">)</span> <span class="op">+</span></span>
@@ -194,7 +189,7 @@
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_bw</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>, legend.direction <span class="op">=</span> <span class="st">"horizontal"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-9-1.png" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-8-1.png" width="100%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
